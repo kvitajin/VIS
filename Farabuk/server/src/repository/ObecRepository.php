@@ -1,5 +1,6 @@
 <?php
 require_once "Reporitory.php";
+require_once "src/data/Obec.php";
 use Connection\Connection;
 
 
@@ -35,20 +36,20 @@ class ObecRepository extends Repository {
             $statement->bindValue(':name', $data->erb);
             $statement->execute();
         }
-        if ($data->shortname) {
+        if ($data->nazev) {
             $table = self::getTableName();
-            $sql = "UPDATE ${table} SET nazev=(:nezev) WHERE id=${idObec}";
+            $sql = "UPDATE ${table} SET nazev=(:nazev) WHERE id=${idObec}";
             $statement = Connection::pdo()->prepare($sql);
             $statement->bindValue(':nazev', $data->nazev);
             $statement->execute();
         }
-        if ($data->color) {
+        if ($data->uri) {
             $sql = "UPDATE ${table} SET uri=(:uri) WHERE id=${idObec}";
             $statement = Connection::pdo()->prepare($sql);
             $statement->bindValue(':uri', $data->uri);
             $statement->execute();
         }
-        if ($data->logo_id) {
+        if ($data->viditelna) {
             $sql = "UPDATE ${table} SET viditelna=(:viditelna) WHERE id=${idObec}";
             $statement = Connection::pdo()->prepare($sql);
             $statement->bindValue(':viditelna', $data->viditelna);
@@ -59,14 +60,13 @@ class ObecRepository extends Repository {
 
     static function create($data) {
         $table = self::getTableName();
-        $sql = "INSERT INTO ${table}(erb, nazev, uri,) 
+        $sql = "INSERT INTO ${table}(erb, nazev, uri) 
 	    VALUES (:erb, :nazev, :uri)";
         $statement = Connection::pdo()->prepare($sql);
         $statement->execute(array(
-            ':name' => $data->erb,
-            ':shortname' => $data->nazev,
-            ':color' => $data->uri,
-            ':logo_id' => $data->viditelna
+            ':erb' => $data->erb,
+            ':nazev' => $data->nazev,
+            ':uri' => $data->uri
         ));
         return Connection::pdo()->lastInsertId();
     }

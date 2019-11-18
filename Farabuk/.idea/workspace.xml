@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4074300-0843-4455-99d1-a5a019a75b7f" name="Default Changelist" comment="" />
+    <list default="true" id="c4074300-0843-4455-99d1-a5a019a75b7f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/server/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/composer.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/data/DruhDokumentu.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/repository/DruhDokumentuRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Farabuk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Farabuk.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d0740463-e60f-42fa-8b2f-5b6af5fd5b46.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f5de2c7d-719a-43be-8d96-5526fd9cb209.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f5de2c7d-719a-43be-8d96-5526fd9cb209.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/db/create.sql" beforeDir="false" afterPath="$PROJECT_DIR$/server/db/create.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/db/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/data/Obec.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/data/Obec.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/repository/Connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/Connection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/repository/ObecRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/ObecRepository.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/server/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
@@ -45,12 +61,24 @@
         <item name="db" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="obec: table" type="3d80ac25:SqliteImplModel$Table" />
+        <item name="druh_dokumentu: table" type="3d80ac25:SqliteImplModel$Table" />
       </path>
     </expand>
     <select />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/server/vendor/mikecao/flight" />
+      <path value="$PROJECT_DIR$/server/vendor/composer" />
+      <path value="$PROJECT_DIR$/server/vendor/erusev/parsedown" />
+      <path value="$PROJECT_DIR$/server/vendor/league/plates" />
+    </include_path>
+  </component>
   <component name="ProjectId" id="1TiDk1PaFqWLJbaPvT2knnObc7D" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -64,12 +92,13 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/server/src/repository" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/server/db" />
       <recent name="$PROJECT_DIR$/server/common" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server" />
+      <recent name="$PROJECT_DIR$/server/src/repository" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -94,11 +123,26 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573934161879</updated>
-      <workItem from="1573934163377" duration="7689000" />
+      <workItem from="1573934163377" duration="9147000" />
+      <workItem from="1574077492998" duration="2816000" />
+      <workItem from="1574092757094" duration="1633000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

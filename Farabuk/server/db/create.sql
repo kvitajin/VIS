@@ -3,7 +3,7 @@ PRAGMA journal_mode = wal;
 PRAGMA foreign_keys = OFF;
 
 CREATE TABLE album (
-	id_album INTEGER PRIMARY KEY,
+	id INTEGER PRIMARY KEY,
 	nazev TEXT NOT NULL,
 	je_uvodni INTEGER,
 	viditelne INTEGER DEFAULT 1,
@@ -12,7 +12,7 @@ CREATE TABLE album (
 -- CREATE INDEX idx_album_obec ON album(ck_id_obec)
 
 CREATE TABLE dokument (
-	id_dokument INTEGER PRIMARY KEY,
+	id INTEGER PRIMARY KEY,
 	nadpis TEXT NOT NULL,
 	uri TEXT NOT NULL,
 	obsah TEXT NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE dokument (
 -- CREATE INDEX idx_dokument_dokument ON dokument(ck_id_kategorie_dokumentu)
 
 CREATE TABLE foto (
-	id_foto INTEGER PRIMARY KEY,
+	id INTEGER PRIMARY KEY,
 	datum TEXT NOT NULL,
 	sirka INTEGER NOT NULL,
 	nazev_souboru TEXT NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE foto (
 -- CREATE INDEX idx_foto_album ON foto(ck_id_album)
 
 CREATE TABLE komentar (
-	id_komentar INTEGER PRIMARY KEY,
+	id INTEGER PRIMARY KEY,
 	obsah TEXT NOT NULL,
 	viditelny INTEGER DEFAULT 1,
 	ck_id_uzivatel INTEGER REFERENCES uzivatel NOT NULL,
@@ -48,7 +48,7 @@ CREATE TABLE komentar (
 );
 
 CREATE TABLE obec (
-	id_obec INTEGER PRIMARY KEY,
+	id INTEGER PRIMARY KEY,
 	erb TEXT NOT NULL,
 	nazev TEXT NOT NULL,
 	uri TEXT NOT NULL,
@@ -56,18 +56,18 @@ CREATE TABLE obec (
 );
 
 CREATE TABLE druh_dokumentu (
-	id_druh_dokumentu INTEGER PRIMARY KEY,
+	id INTEGER PRIMARY KEY,
 	nazev TEXT NOT NULL,
 	uri TEXT NOT NULL
 );
 
 CREATE TABLE kategorie_dokumentu (
-	id_kategorie_dokumentu INTEGER PRIMARY KEY,
+	id INTEGER PRIMARY KEY,
 	nazev TEXT NOT NULL
 );
 
 CREATE TABLE uzivatel (
-	id_uzivatel INTEGER PRIMARY KEY,
+	id INTEGER PRIMARY KEY,
 	nick TEXT NOT NULL,
 	heslo TEXT NOT NULL,
 	email TEXT NOT NULL,
@@ -77,7 +77,7 @@ CREATE TABLE uzivatel (
 );
 
 CREATE TABLE skupina (
-	id_skupina INTEGER PRIMARY KEY,
+	id INTEGER PRIMARY KEY,
 	nazev TEXT NOT NULL,
 	opravneni INTEGER NOT NULL
 );

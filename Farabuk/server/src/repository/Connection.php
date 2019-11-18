@@ -6,7 +6,7 @@ class Connection {
     public $pdo;
     public static $instance;
     final public function __construct($file = "db.sqlite3") {
-        $dsn = "sqlite:" . __DIR__ . '/../' . $file;
+        $dsn = "sqlite:" . __DIR__ . '/../../db/' . $file;
         try {
             $this->pdo = new PDO($dsn);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

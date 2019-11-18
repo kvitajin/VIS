@@ -27,7 +27,7 @@
       <System>1</System>
     </table>
     <table id="20" parent="2" name="uzivatel"/>
-    <column id="21" parent="6" name="id_album">
+    <column id="21" parent="6" name="id">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
@@ -51,15 +51,15 @@
       <NotNull>1</NotNull>
     </column>
     <key id="26" parent="6">
-      <ColNames>id_album</ColNames>
+      <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <foreign-key id="27" parent="6">
       <ColNames>ck_id_obec</ColNames>
       <RefTableName>obec</RefTableName>
-      <RefColNames>id_obec</RefColNames>
+      <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="28" parent="7" name="id_dokument">
+    <column id="28" parent="7" name="id">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
@@ -106,18 +106,18 @@
       <NotNull>1</NotNull>
     </column>
     <key id="38" parent="7">
-      <ColNames>id_dokument</ColNames>
+      <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <foreign-key id="39" parent="7">
       <ColNames>ck_id_druh_dokumentu</ColNames>
       <RefTableName>druh_dokumentu</RefTableName>
-      <RefColNames>id_druh_dokumentu</RefColNames>
+      <RefColNames>id</RefColNames>
     </foreign-key>
     <foreign-key id="40" parent="7">
       <ColNames>ck_id_kategorie_dokumentu</ColNames>
       <RefTableName>kategorie_dokumentu</RefTableName>
-      <RefColNames>id_kategorie_dokumentu</RefColNames>
+      <RefColNames>id</RefColNames>
     </foreign-key>
     <column id="41" parent="8" name="ck_id_dokument">
       <Position>1</Position>
@@ -145,14 +145,14 @@ ck_id_obec</ColNames>
     <foreign-key id="45" parent="8">
       <ColNames>ck_id_dokument</ColNames>
       <RefTableName>dokument</RefTableName>
-      <RefColNames>id_dokument</RefColNames>
+      <RefColNames>id</RefColNames>
     </foreign-key>
     <foreign-key id="46" parent="8">
       <ColNames>ck_id_obec</ColNames>
       <RefTableName>obec</RefTableName>
-      <RefColNames>id_obec</RefColNames>
+      <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="47" parent="9" name="id_druh_dokumentu">
+    <column id="47" parent="9" name="id">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
@@ -167,10 +167,10 @@ ck_id_obec</ColNames>
       <NotNull>1</NotNull>
     </column>
     <key id="50" parent="9">
-      <ColNames>id_druh_dokumentu</ColNames>
+      <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="51" parent="10" name="id_foto">
+    <column id="51" parent="10" name="id">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
@@ -203,15 +203,15 @@ ck_id_obec</ColNames>
       <DataType>INTEGER|0s</DataType>
     </column>
     <key id="58" parent="10">
-      <ColNames>id_foto</ColNames>
+      <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <foreign-key id="59" parent="10">
       <ColNames>ck_id_album</ColNames>
       <RefTableName>album</RefTableName>
-      <RefColNames>id_album</RefColNames>
+      <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="60" parent="11" name="id_kategorie_dokumentu">
+    <column id="60" parent="11" name="id">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
@@ -221,10 +221,10 @@ ck_id_obec</ColNames>
       <NotNull>1</NotNull>
     </column>
     <key id="62" parent="11">
-      <ColNames>id_kategorie_dokumentu</ColNames>
+      <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="63" parent="12" name="id_komentar">
+    <column id="63" parent="12" name="id">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
@@ -252,23 +252,23 @@ ck_id_obec</ColNames>
       <DataType>INTEGER|0s</DataType>
     </column>
     <key id="69" parent="12">
-      <ColNames>id_komentar</ColNames>
+      <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <foreign-key id="70" parent="12">
       <ColNames>ck_id_uzivatel</ColNames>
       <RefTableName>uzivatel</RefTableName>
-      <RefColNames>id_uzivatel</RefColNames>
+      <RefColNames>id</RefColNames>
     </foreign-key>
     <foreign-key id="71" parent="12">
       <ColNames>ck_id_dokument</ColNames>
       <RefTableName>dokument</RefTableName>
-      <RefColNames>id_dokument</RefColNames>
+      <RefColNames>id</RefColNames>
     </foreign-key>
     <foreign-key id="72" parent="12">
       <ColNames>ck_id_foto</ColNames>
       <RefTableName>foto</RefTableName>
-      <RefColNames>id_foto</RefColNames>
+      <RefColNames>id</RefColNames>
     </foreign-key>
     <column id="73" parent="13" name="ck_id_uzivatel">
       <Position>1</Position>
@@ -296,12 +296,12 @@ ck_id_dokument</ColNames>
     <foreign-key id="77" parent="13">
       <ColNames>ck_id_uzivatel</ColNames>
       <RefTableName>uzivatel</RefTableName>
-      <RefColNames>id_uzivatel</RefColNames>
+      <RefColNames>id</RefColNames>
     </foreign-key>
     <foreign-key id="78" parent="13">
       <ColNames>ck_id_dokument</ColNames>
       <RefTableName>dokument</RefTableName>
-      <RefColNames>id_dokument</RefColNames>
+      <RefColNames>id</RefColNames>
     </foreign-key>
     <column id="79" parent="14" name="ck_id_uzivatel">
       <Position>1</Position>
@@ -329,12 +329,12 @@ ck_id_foto</ColNames>
     <foreign-key id="83" parent="14">
       <ColNames>ck_id_uzivatel</ColNames>
       <RefTableName>uzivatel</RefTableName>
-      <RefColNames>id_uzivatel</RefColNames>
+      <RefColNames>id</RefColNames>
     </foreign-key>
     <foreign-key id="84" parent="14">
       <ColNames>ck_id_foto</ColNames>
       <RefTableName>foto</RefTableName>
-      <RefColNames>id_foto</RefColNames>
+      <RefColNames>id</RefColNames>
     </foreign-key>
     <column id="85" parent="15" name="ck_id_uzivatel">
       <Position>1</Position>
@@ -362,14 +362,14 @@ ck_id_komentar</ColNames>
     <foreign-key id="89" parent="15">
       <ColNames>ck_id_uzivatel</ColNames>
       <RefTableName>uzivatel</RefTableName>
-      <RefColNames>id_uzivatel</RefColNames>
+      <RefColNames>id</RefColNames>
     </foreign-key>
     <foreign-key id="90" parent="15">
       <ColNames>ck_id_komentar</ColNames>
       <RefTableName>komentar</RefTableName>
-      <RefColNames>id_komentar</RefColNames>
+      <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="91" parent="16" name="id_obec">
+    <column id="91" parent="16" name="id">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
@@ -394,10 +394,10 @@ ck_id_komentar</ColNames>
       <DefaultExpression>1</DefaultExpression>
     </column>
     <key id="96" parent="16">
-      <ColNames>id_obec</ColNames>
+      <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="97" parent="17" name="id_skupina">
+    <column id="97" parent="17" name="id">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
@@ -412,7 +412,7 @@ ck_id_komentar</ColNames>
       <NotNull>1</NotNull>
     </column>
     <key id="100" parent="17">
-      <ColNames>id_skupina</ColNames>
+      <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="101" parent="18" name="ck_id_skupina">
@@ -441,12 +441,12 @@ ck_id_uzivatel</ColNames>
     <foreign-key id="105" parent="18">
       <ColNames>ck_id_skupina</ColNames>
       <RefTableName>skupina</RefTableName>
-      <RefColNames>id_skupina</RefColNames>
+      <RefColNames>id</RefColNames>
     </foreign-key>
     <foreign-key id="106" parent="18">
       <ColNames>ck_id_uzivatel</ColNames>
       <RefTableName>uzivatel</RefTableName>
-      <RefColNames>id_uzivatel</RefColNames>
+      <RefColNames>id</RefColNames>
     </foreign-key>
     <column id="107" parent="19" name="type">
       <Position>1</Position>
@@ -468,7 +468,7 @@ ck_id_uzivatel</ColNames>
       <Position>5</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="112" parent="20" name="id_uzivatel">
+    <column id="112" parent="20" name="id">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
@@ -501,13 +501,13 @@ ck_id_uzivatel</ColNames>
       <DataType>INTEGER|0s</DataType>
     </column>
     <key id="119" parent="20">
-      <ColNames>id_uzivatel</ColNames>
+      <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <foreign-key id="120" parent="20">
       <ColNames>ck_id_obec</ColNames>
       <RefTableName>obec</RefTableName>
-      <RefColNames>id_obec</RefColNames>
+      <RefColNames>id</RefColNames>
     </foreign-key>
   </database-model>
 </dataSource>
