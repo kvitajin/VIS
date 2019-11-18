@@ -2,20 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4074300-0843-4455-99d1-a5a019a75b7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/composer.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/data/DruhDokumentu.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/repository/DruhDokumentuRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Farabuk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Farabuk.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d0740463-e60f-42fa-8b2f-5b6af5fd5b46.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f5de2c7d-719a-43be-8d96-5526fd9cb209.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f5de2c7d-719a-43be-8d96-5526fd9cb209.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/data/Skupina.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/data/SkupinaUzivatel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/data/Uzivatel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/repository/RelRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/repository/SkupinaRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/repository/SkupinaUzivatelRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/repository/UzivatelRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/db/create.sql" beforeDir="false" afterPath="$PROJECT_DIR$/server/db/create.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/db/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/db/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/server/db/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/db/db.sqlite3-shm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/db/db.sqlite3-wal" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/data/Obec.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/data/Obec.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/repository/Connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/Connection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/repository/DruhDokumentuRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/DruhDokumentuRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/repository/ObecRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/ObecRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/repository/Reporitory.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/Repository.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +62,14 @@
         <item name="db" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="druh_dokumentu: table" type="3d80ac25:SqliteImplModel$Table" />
+        <item name="skupina_uzivatel: table" type="3d80ac25:SqliteImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="uzivatel: table" type="3d80ac25:SqliteImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -113,6 +121,9 @@
       </list>
     </option>
   </component>
+  <component name="ServiceViewManager">
+    <option name="showServicesTree" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -125,7 +136,7 @@
       <updated>1573934161879</updated>
       <workItem from="1573934163377" duration="9147000" />
       <workItem from="1574077492998" duration="2816000" />
-      <workItem from="1574092757094" duration="1633000" />
+      <workItem from="1574092757094" duration="13431000" />
     </task>
     <servers />
   </component>

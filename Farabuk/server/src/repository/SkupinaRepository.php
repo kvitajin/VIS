@@ -1,15 +1,14 @@
 <?php
-require_once "Repository.php";
-require_once "src/data/DruhDokumentu.php";
+
+require_once "Reporitory.php";
+require_once "src/data/Skupina.php";
 use Connection\Connection;
 
-//TODO dodat do deepu vsechny dokumenty
 
-class DruhDokumentuRepository extends Repository {
-    static function getTableName(){
-        return "druh_dokumentu";
+class SkupinaRepository extends Repository {
+    static function getTableName() {
+        return "skupina";
     }
-
     static function readAllDeep($lim) {
         return parent::readAll($lim);
     }
@@ -29,20 +28,18 @@ class DruhDokumentuRepository extends Repository {
     static function update($data) {
         Connection::pdo()->beginTransaction();
         $table = self::getTableName();
-        $idDruh = $data->id;
-        //var_dump($data);
-
+        $idSkupina = $data->id;
         if ($data->nazev) {
-            $table = self::getTableName();
-            $sql = "UPDATE ${table} SET nazev=(:nazev) WHERE id=${idDruh}";
+            $sql = "UPDATE ${table} SET nazev=(:nazev) WHERE id=${idSkupina}";
             $statement = Connection::pdo()->prepare($sql);
             $statement->bindValue(':nazev', $data->nazev);
             $statement->execute();
         }
-        if ($data->uri) {
-            $sql = "UPDATE ${table} SET uri=(:uri) WHERE id=${idDruh}";
+        if ($data->opravneni) {
+            $table = self::getTableName();
+            $sql = "UPDATE ${table} SET opravneni=(:opravneni) WHERE id=${idSkupina}";
             $statement = Connection::pdo()->prepare($sql);
-            $statement->bindValue(':uri', $data->uri);
+            $statement->bindValue(':opravneni', $data->opravneni);
             $statement->execute();
         }
         Connection::pdo()->commit();
@@ -50,12 +47,12 @@ class DruhDokumentuRepository extends Repository {
 
     static function create($data) {
         $table = self::getTableName();
-        $sql = "INSERT INTO ${table}(nazev, uri) 
-	    VALUES (:nazev, :uri)";
+        $sql = "INSERT INTO ${table}(nazev, opravneni) 
+	    VALUES (:nazev, :opravneni)";
         $statement = Connection::pdo()->prepare($sql);
         $statement->execute(array(
             ':nazev' => $data->nazev,
-            ':uri' => $data->uri
+            ':opravneni' => $data->opravneni
         ));
         return Connection::pdo()->lastInsertId();
     }

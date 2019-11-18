@@ -1,6 +1,6 @@
 <?php
 require_once "src/repository/Connection.php";
-require_once "src/repository/Reporitory.php";
+require_once "src/repository/Repository.php";
 
 
 class Obec {

@@ -1,5 +1,5 @@
 <?php
-require_once "Reporitory.php";
+require_once "Repository.php";
 require_once "src/data/Obec.php";
 use Connection\Connection;
 
