@@ -1,19 +1,33 @@
 <?php
 
 require_once "Repository.php";
-require_once "src/data/Uzivatel";
+require_once "src/data/Uzivatel.php";
 require_once "SkupinaRepository.php";
-
+use Connection\Connection;
 
 class UzivatelRepository extends Repository {
-
+    static function getTableName() {
+        return "uzivatel";
+    }
     static function read($id) {
         $sql = "SELECT * FROM " . static::getTableName() . " WHERE id=" . $id;
         $statement = Connection::pdo()->prepare($sql);
         $statement->execute();
         $record = $statement->fetch(PDO::FETCH_ASSOC);
-        return $record;
-
+        //return $record;
+        $uzivatel= new Uzivatel();
+        $uzivatel->id=intval($record["id"]);
+        $uzivatel->nick=$record["nick"];
+        $uzivatel->heslo=$record["heslo"];
+        $uzivatel->email=$record["email"];
+        $uzivatel->datumNarozeni=$record["datim_narozeni"];
+        $uzivatel->ban= intval($record[ban]);
+        $uzivatel->ckIdObec=intval($record["ck_id_obec"]);
+//        var_dump($record);
+//        echo "\n\n";
+        //var_dump($uzivatel);
+        $uzivatel->skupina=SkupinaUzivatelRepository::read($uzivatel->id, self::getTableName());
+        return $uzivatel;
         //TODO: dodelat az bude hotova tabulka skupina_uzivatel
     }
 
@@ -37,8 +51,34 @@ class UzivatelRepository extends Repository {
         // TODO: Implement update() method.
     }
 
-    static function create($data) {
-        // TODO: Implement create() method.
+    static function create($data) { //TODO overeni unikatnosti emailu
+        //var_dump($data);
+        if ($data->heslo===$data->hesloZnova){
+            if($data->datumNarozeni) {           //TODO overeni veku
+                $data->heslo= password_hash($data->heslo, PASSWORD_DEFAULT);
+                $table = self::getTableName();
+                $sql = "INSERT INTO ${table}(nick, heslo, email, datum_narozeni, ban, ck_id_obec) 
+	    VALUES (:nick, :heslo, :email, :datum_narozeni, :ban, :ck_id_obec)";
+                $statement = Connection::pdo()->prepare($sql);
+                $statement->execute(array(
+                    ':nick' => $data->nick,
+                    ':heslo' => $data->heslo,
+                    ':email' => $data->email,
+                    ':datum_narozeni' => $data->datumNarozeni,
+                    ':ban' => $data->ban,
+                    ':ck_id_obec' => $data->ckIdObec
+                ));
+                return Connection::pdo()->lastInsertId();
+            }
+        }
+
+
+
+
+
+
+
+
     }
 
     static function createDeep($data) {

@@ -1,6 +1,6 @@
 <?php
 
-require_once "Reporitory.php";
+require_once "Repository.php";
 require_once "src/data/Skupina.php";
 use Connection\Connection;
 

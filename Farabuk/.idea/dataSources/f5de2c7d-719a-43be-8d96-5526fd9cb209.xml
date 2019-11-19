@@ -133,7 +133,6 @@
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ck_id_dokument
 ck_id_obec</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="44" parent="8">
@@ -284,7 +283,6 @@ ck_id_obec</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ck_id_uzivatel
 ck_id_dokument</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="76" parent="13">
@@ -317,7 +315,6 @@ ck_id_dokument</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ck_id_uzivatel
 ck_id_foto</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="82" parent="14">
@@ -350,7 +347,6 @@ ck_id_foto</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ck_id_uzivatel
 ck_id_komentar</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="88" parent="15">
@@ -429,7 +425,6 @@ ck_id_komentar</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ck_id_skupina
 ck_id_uzivatel</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="104" parent="18">
