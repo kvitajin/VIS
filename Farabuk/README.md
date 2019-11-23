@@ -5,11 +5,11 @@
 Celý projekt vzikl za účelem umožnit každé farnosti mít vlastní farní stránky bez většího problému. 
 - Samotný projekt má několik základních složek, proto popíšu, o se v které zhuba nachází, aby byla orientace zjednodušena </br>
 ---
-- #  frontend
+- ##  frontend
     - zatím prázdné
 --- 
 
-- # server
+- ## server
     - common 
         - pomocné třídy, které mají spíše podpůrnou funkci
     - db 
