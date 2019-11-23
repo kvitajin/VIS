@@ -2,6 +2,8 @@
 use Connection\Connection;
 require_once "Connection.php";
 abstract class Repository {
+    abstract static function getTableName();
+
     static function readAll($lim = 99) {
         //tested
         $sql = "SELECT * FROM " . static::getTableName() . " LIMIT " . $lim;

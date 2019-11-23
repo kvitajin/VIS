@@ -28,7 +28,6 @@ class UzivatelRepository extends Repository {
         //var_dump($uzivatel);
         $uzivatel->skupina=SkupinaUzivatelRepository::read($uzivatel->id, self::getTableName());
         return $uzivatel;
-        //TODO: dodelat az bude hotova tabulka skupina_uzivatel
     }
 
     static function readAllDeep($lim) {
@@ -40,7 +39,8 @@ class UzivatelRepository extends Repository {
     }
 
     static function readDeep($id) {
-        // TODO: Implement readDeep() method.
+        $tmp= self::read($id);
+        $tmp->likeDokument= a;      //todo tady dodelat, ale prve vsechny vazebni tabulky
     }
 
     static function readRearDeep($id, $deep) {

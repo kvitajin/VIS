@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4074300-0843-4455-99d1-a5a019a75b7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/Test.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f5de2c7d-719a-43be-8d96-5526fd9cb209.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f5de2c7d-719a-43be-8d96-5526fd9cb209.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/data/Album.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/data/Foto.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/data/LikeFoto.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/repository/AlbumReporitory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/repository/FotoRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/repository/LikeFotoRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/db/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/server/db/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/db/db.sqlite3-shm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/db/db.sqlite3-wal" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/data/Skupina.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/data/Skupina.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/data/Uzivatel.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/data/Uzivatel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/repository/SkupinaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/SkupinaRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/repository/RelRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/RelRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/repository/Repository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/Repository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/repository/SkupinaUzivatelRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/SkupinaUzivatelRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/repository/UzivatelRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/UzivatelRepository.php" afterDir="false" />
     </list>
@@ -51,6 +55,27 @@
         <item name="db" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="album: table" type="3d80ac25:SqliteImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="foto: table" type="3d80ac25:SqliteImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="like_foto: table" type="3d80ac25:SqliteImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -126,7 +151,10 @@
       <workItem from="1573934163377" duration="9147000" />
       <workItem from="1574077492998" duration="2816000" />
       <workItem from="1574092757094" duration="19467000" />
-      <workItem from="1574154195635" duration="5830000" />
+      <workItem from="1574154195635" duration="6169000" />
+      <workItem from="1574170514871" duration="2270000" />
+      <workItem from="1574261455721" duration="303000" />
+      <workItem from="1574435308738" duration="8429000" />
     </task>
     <servers />
   </component>

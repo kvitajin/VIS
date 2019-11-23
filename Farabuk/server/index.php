@@ -29,5 +29,6 @@ $uzivatel->id=1;
 //SkupinaUzivatelRepository::create(1,2);
 
 
-
-var_dump(UzivatelRepository::read(1));
+echo "<pre>";
+print_r(UzivatelRepository::read(1));
+echo "</pre>";
