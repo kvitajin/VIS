@@ -23,4 +23,3 @@ Celý projekt vzikl za účelem umožnit každé farnosti mít vlastní farní s
         - třídy metod a intervacy 
     - static 
         - zatím prázdné, zamýšleno jako složka harcodovaných věcí, u kterých se počítá s brzkou úpravou 
-    
