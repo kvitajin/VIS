@@ -10,4 +10,6 @@ class Foto {
     public $viditelna;
     public $ckIdAlbum;
 
+
+
 }
