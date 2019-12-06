@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4074300-0843-4455-99d1-a5a019a75b7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/src/data/Dokument.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/data/DokumentObec.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/repository/DokumentObecRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/repository/DokumentRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f5de2c7d-719a-43be-8d96-5526fd9cb209.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f5de2c7d-719a-43be-8d96-5526fd9cb209.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/test/ObecRepositoryTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/data/DruhDokumentu.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/data/DruhDokumentu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/repository/DruhDokumentuRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/DruhDokumentuRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/repository/FotoRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/FotoRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/repository/LikeFotoRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/LikeFotoRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/repository/Repository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/Repository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/repository/SkupinaUzivatelRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/SkupinaUzivatelRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/db/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/server/db/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/data/Obec.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/data/Obec.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/repository/ObecRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/ObecRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +16,7 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/server/composer.json</pharConfigPath>
     <execution>
-      <executable />
+      <executable path="$PROJECT_DIR$/server/vendor/composer/installed.json" />
     </execution>
   </component>
   <component name="DatabaseView">
@@ -58,13 +51,6 @@
         <item name="db" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="dokument: table" type="3d80ac25:SqliteImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
         <item name="obec: table" type="3d80ac25:SqliteImplModel$Table" />
       </path>
     </expand>
@@ -74,10 +60,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/server/src/repository/DokumentObecRepository.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/server/src/repository/LikeFotoRepository.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/server/src/repository/DokumentObecRepository.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.3">
     <include_path>
       <path value="$PROJECT_DIR$/server/vendor/mikecao/flight" />
       <path value="$PROJECT_DIR$/server/vendor/composer" />
@@ -94,16 +80,17 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="sqlite" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/db" />
+    <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit 6+" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Programy/PHPUnit/phpunit" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
+    <property name="settings.editor.selected.configurable" value="php.test.frameworks.configurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -114,6 +101,41 @@
       <recent name="$PROJECT_DIR$/server" />
       <recent name="$PROJECT_DIR$/server/src/repository" />
     </key>
+  </component>
+  <component name="RunManager" selected="PHPUnit.ObecRepositoryTest">
+    <configuration name="ObecRepositoryTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="ObecRepositoryTest" file="$PROJECT_DIR$/server/src/test/ObecRepositoryTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ObecRepositoryTest.testCreate (1)" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="ObecRepositoryTest" file="$PROJECT_DIR$/server/src/test/ObecRepositoryTest.php" method="testCreate" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ObecRepositoryTest.testCreate" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Connection\ObecRepositoryTest" file="$PROJECT_DIR$/server/src/test/ObecRepositoryTest.php" method="testCreate" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ObecRepositoryTest.testCreate" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="ObecRepositoryTest" file="$PROJECT_DIR$/server/src/test/ObecRepositoryTest.php" method="testCreate" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ObecRepositoryTest.testRead" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="ObecRepositoryTest" file="$PROJECT_DIR$/server/src/test/ObecRepositoryTest.php" method="testRead" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ObecRepositoryTest.testReadAll" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="ObecRepositoryTest" file="$PROJECT_DIR$/server/src/test/ObecRepositoryTest.php" method="testReadAll" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.ObecRepositoryTest" />
+        <item itemvalue="PHPUnit.ObecRepositoryTest.testRead" />
+        <item itemvalue="PHPUnit.ObecRepositoryTest.testReadAll" />
+        <item itemvalue="PHPUnit.ObecRepositoryTest.testCreate (1)" />
+        <item itemvalue="PHPUnit.ObecRepositoryTest.testCreate" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -149,7 +171,10 @@
       <workItem from="1574674259496" duration="1390000" />
       <workItem from="1574694436790" duration="627000" />
       <workItem from="1575564301150" duration="15577000" />
-      <workItem from="1575633323921" duration="328000" />
+      <workItem from="1575633323921" duration="1926000" />
+      <workItem from="1575635264095" duration="627000" />
+      <workItem from="1575636189026" duration="864000" />
+      <workItem from="1575640388179" duration="3858000" />
     </task>
     <servers />
   </component>
@@ -170,9 +195,73 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="620" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1575633323743">
+    <state x="700" y="170" width="783" height="823" key="#ObecRepositoryTest.testCreate" timestamp="1575634767728">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="620" y="381" key="com.intellij.ide.util.TipDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1575633323743" />
+    <state x="700" y="170" width="783" height="823" key="#ObecRepositoryTest.testCreate/0.27.1920.1053@0.27.1920.1053" timestamp="1575634767728" />
+    <state x="667" y="153" width="737" height="812" key="#ObecRepositoryTest.testCreate_(1)" timestamp="1575634728071">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="667" y="153" width="737" height="812" key="#ObecRepositoryTest.testCreate_(1)/0.27.1920.1053@0.27.1920.1053" timestamp="1575634728071" />
+    <state x="605" y="142" width="688" height="836" key="#PHP" timestamp="1575634504813">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="605" y="142" width="688" height="836" key="#PHP/0.27.1920.1053@0.27.1920.1053" timestamp="1575634504813" />
+    <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575637048004">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1575637048004" />
+    <state x="531" y="269" width="424" height="491" key="FileChooserDialogImpl" timestamp="1575643232942">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="531" y="269" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1575643232942" />
+    <state width="1874" height="275" key="GridCell.Tab.0.bottom" timestamp="1575648816555">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="275" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1575648816555" />
+    <state width="1874" height="275" key="GridCell.Tab.0.center" timestamp="1575648816554">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="275" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1575648816554" />
+    <state width="1874" height="275" key="GridCell.Tab.0.left" timestamp="1575648816554">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="275" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1575648816554" />
+    <state width="1874" height="275" key="GridCell.Tab.0.right" timestamp="1575648816554">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="275" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1575648816554" />
+    <state width="1874" height="340" key="GridCell.Tab.1.bottom" timestamp="1575644414431">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="340" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1575644414431" />
+    <state width="1874" height="340" key="GridCell.Tab.1.center" timestamp="1575644414431">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="340" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1575644414431" />
+    <state width="1874" height="340" key="GridCell.Tab.1.left" timestamp="1575644414431">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="340" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1575644414431" />
+    <state width="1874" height="340" key="GridCell.Tab.1.right" timestamp="1575644414431">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="340" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1575644414431" />
+    <state x="627" y="364" width="655" height="385" key="NewPhpClassDialog" timestamp="1575634779835">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="627" y="364" width="655" height="385" key="NewPhpClassDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1575634779835" />
+    <state x="449" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1575643240126">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="449" y="188" width="1022" height="737" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1575643240126" />
+    <state x="620" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1575640388473">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="620" y="381" key="com.intellij.ide.util.TipDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1575640388473" />
+    <state x="549" y="244" width="811" height="625" key="com.jetbrains.php.test.PhpNewTestDialog" timestamp="1575634913418">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="549" y="244" width="811" height="625" key="com.jetbrains.php.test.PhpNewTestDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1575634913418" />
   </component>
 </project>
