@@ -58,13 +58,17 @@ class LikeFotoRepository extends RelRepository {
             }
             //var_dump($values);
             foreach ($values as $idcko){
-                $sql = "SELECT * FROM skupina WHERE id=" . $idcko;
+                $sql = "SELECT * FROM foto WHERE id=" . $idcko;
                 $statement = Connection::pdo()->prepare($sql);
                 $statement->execute();
                 $tmp=$statement->fetch(PDO::FETCH_ASSOC);
                 $tmpFoto= new Foto();
-                //TODO 1 tady pokracovat po foto
-
+                $tmpFoto->id= intval($tmp["id"]);
+                $tmpFoto->datum= $tmp["datum"];
+                $tmpFoto->sirka= intval($tmp["sirka"]);
+                $tmpFoto->nazevSouboru= $tmp["nazev_souboru"];
+                $tmpFoto->popis= $tmp["viditelna"];
+                $tmpFoto->ckIdAlbum= $tmp["ck_id_album"];
                 array_push($data,$tmpFoto );
             }
         }
@@ -72,14 +76,17 @@ class LikeFotoRepository extends RelRepository {
         return $data;
         //TODO: zkusit
 
-
-
-
-
     }
 
-    static function create($idLeft, $idRight) {
-        // TODO: Implement create() method.
+    static function create($idUzivatel, $idFoto) {
+        $table = self::getTableName();
+        $sql = "INSERT INTO ${table}(ck_id_uzivatel, ck_id_foto) 
+	    VALUES (:uziv, :foto)";
+        $statement = Connection::pdo()->prepare($sql);
+        $statement->execute(array(
+            ':uziv' => $idUzivatel,
+            ':foto' => $idFoto
+        ));
     }
 
     static function delete($id, $fromSide) {

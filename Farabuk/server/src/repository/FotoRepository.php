@@ -2,6 +2,7 @@
 require_once "src/data/Foto.php";
 use Connection\Connection;
 
+
 class FotoRepository extends Repository {
 
     static function getTableName() {
@@ -54,8 +55,8 @@ class FotoRepository extends Repository {
         }
         else{
             $tmpFoto->ickIdAlbum=AlbumReporitory::read($tmpFoto->id);
-
         }
+        return $tmpFoto;
     }
 
     static function update($data) {

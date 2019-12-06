@@ -2,10 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4074300-0843-4455-99d1-a5a019a75b7f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/server/src/data/Dokument.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/data/DokumentObec.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/repository/DokumentObecRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/repository/DokumentRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f5de2c7d-719a-43be-8d96-5526fd9cb209.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f5de2c7d-719a-43be-8d96-5526fd9cb209.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/data/DruhDokumentu.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/data/DruhDokumentu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/repository/DruhDokumentuRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/DruhDokumentuRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/repository/FotoRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/FotoRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/repository/LikeFotoRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/LikeFotoRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/repository/Repository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/Repository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/repository/SkupinaUzivatelRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/SkupinaUzivatelRepository.php" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,11 +53,29 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="dokument: table" type="3d80ac25:SqliteImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="obec: table" type="3d80ac25:SqliteImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/server/src/repository/DokumentObecRepository.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/server/src/repository/LikeFotoRepository.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -60,6 +87,11 @@
   </component>
   <component name="ProjectId" id="1TiDk1PaFqWLJbaPvT2knnObc7D" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -83,19 +115,17 @@
       <recent name="$PROJECT_DIR$/server/src/repository" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
-  </component>
-  <component name="ServiceViewManager">
     <option name="showServicesTree" value="false" />
   </component>
   <component name="SvnConfiguration">
@@ -114,7 +144,12 @@
       <workItem from="1574154195635" duration="6169000" />
       <workItem from="1574170514871" duration="2270000" />
       <workItem from="1574261455721" duration="303000" />
-      <workItem from="1574435308738" duration="20583000" />
+      <workItem from="1574435308738" duration="21580000" />
+      <workItem from="1574618476012" duration="4151000" />
+      <workItem from="1574674259496" duration="1390000" />
+      <workItem from="1574694436790" duration="627000" />
+      <workItem from="1575564301150" duration="15577000" />
+      <workItem from="1575633323921" duration="328000" />
     </task>
     <servers />
   </component>
@@ -133,5 +168,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="620" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1575633323743">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="620" y="381" key="com.intellij.ide.util.TipDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1575633323743" />
   </component>
 </project>

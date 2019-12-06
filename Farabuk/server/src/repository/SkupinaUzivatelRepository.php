@@ -102,5 +102,8 @@ class SkupinaUzivatelRepository extends RelRepository {
         else{
             return;
         }
+
+
+        //TODO  toto mozna predelat na obecny delete jednoho zaznamu
     }
 }

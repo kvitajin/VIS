@@ -29,7 +29,7 @@ abstract class Repository {
     abstract static function readRearDeep($id, $deep);
     abstract static function update($data);
     static function delete($id) {
-        $sql = "DELETE FROM " . self::getTableName() . " WHERE id=" . $id;
+        $sql = "DELETE FROM " . static::getTableName() . " WHERE id=" . $id;
         $statement = Connection::pdo()->prepare($sql);
         $statement->execute();
     }
