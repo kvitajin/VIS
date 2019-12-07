@@ -1,5 +1,6 @@
 <?php
-require_once "src/repository/Repository.php";
+require_once __DIR__ ."/../repository/Repository.php";
+
 
 class Album {
     public $id;

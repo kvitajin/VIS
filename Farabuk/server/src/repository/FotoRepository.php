@@ -1,5 +1,5 @@
 <?php
-require_once "src/data/Foto.php";
+require_once __DIR__ ."/../data/Foto.php";
 use Connection\Connection;
 
 
@@ -44,17 +44,17 @@ class FotoRepository extends Repository {
 
     static function readDeep($id) {
         $tmpFoto=parent::read($id);
-        $tmpFoto->ckIdAlbum=AlbumReporitory::readDeep($tmpFoto->ckIdAlbum);
+        $tmpFoto->ckIdAlbum=AlbumRepository::readDeep($tmpFoto->ckIdAlbum);
         return $tmpFoto;
     }
 
     static function readRearDeep($id, $deep) {
         $tmpFoto=parent::read($id);
         if (--$deep){
-            $tmpFoto->ickIdAlbum=AlbumReporitory::readRearDeep($tmpFoto->id, $deep);
+            $tmpFoto->ickIdAlbum=AlbumRepository::readRearDeep($tmpFoto->id, $deep);
         }
         else{
-            $tmpFoto->ickIdAlbum=AlbumReporitory::read($tmpFoto->id);
+            $tmpFoto->ickIdAlbum=AlbumRepository::read($tmpFoto->id);
         }
         return $tmpFoto;
     }
@@ -102,13 +102,13 @@ class FotoRepository extends Repository {
 
     static function create($data) {
         $table = self::getTableName();
-        $sql = "INSERT INTO ${table}(datum, sirka, nazev_soboru, popis, viditelna, ck_id_album) 
+        $sql = "INSERT INTO ${table}(datum, sirka, nazev_souboru, popis, viditelna, ck_id_album) 
 	    VALUES (:datum, :sirka, :nazev_souboru, :popis, :viditelna, :ck_id_album)";
         $statement = Connection::pdo()->prepare($sql);
         $statement->execute(array(
             ':datum' => $data->datum,
             ':sirka' => $data->sirka,
-            ':nazev_souboru' => $data->nazevSoubrou,
+            ':nazev_souboru' => $data->nazevSouboru,
             ':popis'=> $data->popis,
             ':viditelna'=> $data->viditelna,
             ':ck_id_album' => $data->ckIdAlbum
@@ -117,7 +117,7 @@ class FotoRepository extends Repository {
     }
 
     static function createDeep($data) {
-        return AlbumReporitory::createDeep($data);
+        return AlbumRepository::createDeep($data);
     }
 
     static function readAllAlbum($id){

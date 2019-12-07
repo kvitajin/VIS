@@ -1,25 +1,36 @@
 <?php
-require_once "src/data/Album.php";
-require_once "src/data/Foto.php";
+require_once __DIR__ ."/../data/Album.php";
+require_once __DIR__ ."/../repository/FotoRepository.php";
+require_once __DIR__ ."/../repository/ObecRepository.php";
+
 use Connection\Connection;
 
-class AlbumReporitory extends Repository {
+class AlbumRepository extends Repository {
 
     static function getTableName() {
         return "album";
     }
 
-    static function readAllDeep($lim) {
+    static function readAllDeep($lim=99) {
         $tmpAlbums=parent::readAll($lim);
-        foreach ($tmpAlbums as $album){
-            $album->ckIdObec=ObecRepository::readDeep($album->id);
-            $album->foto= FotoRepository::readAllAlbum($album->id);
+        $data=array();
+        foreach ($tmpAlbums as $item){
+            $tmp=new Album();
+            $tmp->id= intval($item['id']);
+            $tmp->nazev=$item["nazev"];
+            $tmp->jeUvodni= intval($item["je_uvodni"]);
+            $tmp->viditelne= intval($item["viditelne"]);
+            $tmp->ckIdObec= intval($item["ck_id_obec"]);
+            $tmp->ckIdObec=ObecRepository::readDeep($tmp->id);
+            $tmp->foto=FotoRepository::readAllAlbum($tmp->id);
+            array_push($data, $tmp);
         }
-        return $tmpAlbums;
+        return $data;
     }
+    static function readAllRearDeep($deep, $lim=99) {
+        $tmpAlbums=self::readAll($lim);
 
-    static function readAllRearDeep($lim, $deep) {
-        $tmpAlbums=parent::readAll($lim);
+
         if (--$deep){
             foreach ($tmpAlbums as $album){
                 $album->ckIdObec=ObecRepository::readRearDeep($album->ckIdObec, $deep);
@@ -34,19 +45,18 @@ class AlbumReporitory extends Repository {
     }
 
     static function readDeep($id) {
-        $tmpAlbum=parent::read($id);
+        $tmpAlbum=self::read($id);
         $tmpAlbum->ckIdoObec=ObecRepository::readDeep($id);
         $tmpAlbum->foto=FotoRepository::readAllAlbum($id);
         return $tmpAlbum;
     }
 
-    static function readRearDeep($id, $deep) {
-        if ($deep){
-            return ObecRepository::readRearDeep($id, --$deep);
+    static function readRearDeep($id, $deep) {      //TODO co to kurva je?
+        $tmp= self::read($id);
+        if (--$deep){
+            $tmp->ckIdObec= ObecRepository::readRearDeep($id, --$deep);
         }
-        else{
-            return ObecRepository::read($id);
-        }
+        return $tmp;
     }
 
     static function update($data) {
@@ -90,7 +100,7 @@ class AlbumReporitory extends Repository {
         $statement->execute(array(
             ':nazev' => $data->nazev,
             ':je_uvodni'=>$data->jeUvodni,
-            ':viditelna'=>$data->viditelna,
+            ':viditelne'=>$data->viditelne,
             ':ck_id_obec'=>$data->ckIdObec
         ));
         return Connection::pdo()->lastInsertId();
@@ -104,7 +114,7 @@ class AlbumReporitory extends Repository {
         $statement->execute(array(
             ':nazev' => $data->nazev,
             ':je_uvodni'=>$data->jeUvodni,
-            ':viditelna'=>$data->viditelna,
+            ':viditelne'=>$data->viditelne,
             ':ck_id_obec'=>$data->ckIdObec
         ));
         $idAlbum= Connection::pdo()->lastInsertId();
@@ -113,6 +123,50 @@ class AlbumReporitory extends Repository {
             FotoRepository::create($fotka);
         }
     return $idAlbum;
+    }
 
+    static function read($id) {
+        $tmp = parent::read($id);
+        $data= new Album();
+        $data->id= intval($tmp["id"]);
+        $data->nazev=$tmp["nazev"];
+        $data->jeUvodni= intval($tmp["je_uvodni"]);
+        $data->viditelne= intval($tmp["viditelne"]);
+        $data->ckIdObec= intval($tmp["ck_id_obec"]);
+        $data->foto= null;
+        return $data;
+    }
+
+    static function readAll($lim = 99) {
+        $tmpData= parent::readAll($lim);
+        $data= array();
+        foreach ($tmpData as $item){
+            $tmp= new Album();
+            $tmp->id= intval($item["id"]);
+            $tmp->nazev= $item["nazev"];
+            $tmp->jeUvodni= $item["je_uvodni"];
+            $tmp->viditelne= $item["viditelne"];
+            $tmp->ckIdObec= intval($item["ck_id_obec"]);
+            array_push($data, $tmp);
+        }
+        return $data;
+    }
+    static function readAllObec($id, $lim=99){
+        $sql = "SELECT * FROM " . static::getTableName() ." WHERE ck_id_obec= ". $id . " LIMIT " . $lim ;
+        $statement = Connection::pdo()->prepare($sql);
+        $statement->execute();
+        $i = 0;
+        $data= array();
+        while ($records = $statement->fetch(PDO::FETCH_ASSOC)) {
+            $tmp= new Album();
+            $tmp->id= $records["id"];
+            $tmp->nazev= $records["nazev"];
+            $tmp->jeUvodni= $records["je_uvodni"];
+            $tmp->viditelne= $records["viditelne"];
+            $tmp->ckIdObec= $records["ck_id_obec"];
+            array_push($data, $tmp);
+            $i++;
+        }
+        return $data;
     }
 }
