@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4074300-0843-4455-99d1-a5a019a75b7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/src/test/FotoRepositoryTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/db/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/server/db/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/repository/FotoRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/FotoRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -184,7 +181,7 @@
       <workItem from="1575671361535" duration="14953000" />
       <workItem from="1575734006001" duration="3359000" />
       <workItem from="1575754836817" duration="1037000" />
-      <workItem from="1575764578038" duration="4298000" />
+      <workItem from="1575764578038" duration="5688000" />
     </task>
     <servers />
   </component>

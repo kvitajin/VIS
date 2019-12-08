@@ -147,6 +147,4 @@ class FotoRepository extends Repository {
         return self::arr2Obj(parent::read($id));
     }
 
-    
-
 }
