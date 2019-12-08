@@ -71,13 +71,13 @@ class AlbumRepository extends Repository {
             $statement->bindValue(':nazev', $data->nazev);
             $statement->execute();
         }
-        if ($data->jeUvodni) {
+        if ($data->jeUvodni!==null) {
             $sql = "UPDATE ${table} SET je_uvodni=(:jeUvodni) WHERE id=${idAlbum}";
             $statement = Connection::pdo()->prepare($sql);
             $statement->bindValue(':jeUvodni', $data->jeUvodni);
             $statement->execute();
         }
-        if ($data->viditelna) {
+        if ($data->viditelne!==null) {
             $sql = "UPDATE ${table} SET viditelne=(:viditelne) WHERE id=${idAlbum}";
             $statement = Connection::pdo()->prepare($sql);
             $statement->bindValue(':viditelne', $data->viditelne);
@@ -90,6 +90,7 @@ class AlbumRepository extends Repository {
             $statement->execute();
         }
         Connection::pdo()->commit();
+        return true;
     }
 
     static function create($data) {
@@ -168,5 +169,12 @@ class AlbumRepository extends Repository {
             $i++;
         }
         return $data;
+    }
+
+    static function delete($id) {
+        $tmp= new Album();
+        $tmp->id=$id;
+        $tmp->viditelne=0;
+        return self::update($tmp);
     }
 }

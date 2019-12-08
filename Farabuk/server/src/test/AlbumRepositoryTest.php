@@ -53,11 +53,14 @@ class AlbumRepositoryTest extends TestCase {
     }
 
     public function testUpdate() {
-
+        $tmp= new Album();
+        $tmp->id=1;
+        $tmp->jeUvodni=1;
+        $this->assertTrue(AlbumRepository::update($tmp));
     }
 
     public function testDelete() {
-
+        $this->assertTrue(AlbumRepository::delete(1));
     }
 
     public function testReadRearDeep() {
