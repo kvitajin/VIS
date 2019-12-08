@@ -25,33 +25,23 @@ class FotoRepository extends Repository {
         $sql = "SELECT * FROM " . static::getTableName() . " WHERE ck_id_album=" . $idAlbum;
         $statement = Connection::pdo()->prepare($sql);
         $statement->execute();
-        $i = 0;
-        while ($records[$i] = $statement->fetch(PDO::FETCH_ASSOC)) {
-            $records[$i]->ckIdObec=ObecRepository::readDeep($records[$i]->ckIdObec);
-            $i++;
+        $data=array();
+        while ($tmp = $statement->fetch(PDO::FETCH_ASSOC)) {
+            $item= self::arr2Obj($tmp);
+            $item->ckIdAlbum=AlbumRepository::readDeep($item->ckIdAlbum);
+            array_push($data, $item);
         }
-        return $records;
+        return $data;
     }
 
     static function readAllRearDeep($idAlbum, $deep) {
-        $sql = "SELECT * FROM " . static::getTableName() . " WHERE ck_id_album=" . $idAlbum;
-        $statement = Connection::pdo()->prepare($sql);
-        $statement->execute();
+        $tmp= self::readAllAlbum($idAlbum);
         if (--$deep){
-            $i = 0;
-            while ($records[$i] = $statement->fetch(PDO::FETCH_ASSOC)) {
-                $records[$i]->ckIdObec=ObecRepository::readRearDeep($records[$i]->ckIdObec, $deep);
-                $i++;
+            foreach ($tmp as $album){
+                $album->ckIdAlbum=AlbumRepository::readRearDeep($album->ckIdAlbum, $deep);
             }
         }
-        else{
-            $i = 0;
-            while ($records[$i] = $statement->fetch(PDO::FETCH_ASSOC)) {
-                $i++;
-            }
-        }
-        return $records;
-
+        return $tmp;
     }
 
     static function readDeep($id) {
@@ -83,20 +73,20 @@ class FotoRepository extends Repository {
             $statement->bindValue(':sirka', $data->sirka);
             $statement->execute();
         }
-        if ($data->nazev) {
+        if ($data->nazevSouboru) {
             $table = self::getTableName();
             $sql = "UPDATE ${table} SET nazev_souboru=(:nazev_souboru) WHERE id=${idFoto}";
             $statement = Connection::pdo()->prepare($sql);
             $statement->bindValue(':nazev_souboru', $data->nazev_souboru);
             $statement->execute();
         }
-        if ($data->uri) {
+        if ($data->popis) {
             $sql = "UPDATE ${table} SET popis=(:popis) WHERE id=${idFoto}";
             $statement = Connection::pdo()->prepare($sql);
             $statement->bindValue(':popis', $data->popis);
             $statement->execute();
         }
-        if ($data->viditelna) {
+        if ($data->viditelna!==null) {
             $sql = "UPDATE ${table} SET viditelna=(:viditelna) WHERE id=${idFoto}";
             $statement = Connection::pdo()->prepare($sql);
             $statement->bindValue(':viditelna', $data->viditelna);
@@ -109,6 +99,7 @@ class FotoRepository extends Repository {
             $statement->execute();
         }
         Connection::pdo()->commit();
+        return true;
 
     }
 
@@ -136,18 +127,31 @@ class FotoRepository extends Repository {
         $sql = "SELECT * FROM " . static::getTableName() . " WHERE ck_id_album=" . $id;
         $statement = Connection::pdo()->prepare($sql);
         $statement->execute();
-        $i = 0;
-        while ($records[$i] = $statement->fetch(PDO::FETCH_ASSOC)) {
-            $i++;
+        $data=array();
+        while ($tmp = $statement->fetch(PDO::FETCH_ASSOC)) {
+            array_push($data, self::arr2Obj($tmp));
         }
-        return $records;
+        return $data;
     }
 
     static function read($id) {
         return self::arr2Obj(parent::read($id));
     }
+    static function delete($id) {
+        $tmp = new Foto();
+        $tmp->id=$id;
+        $tmp->viditelna=0;
+        return self::update($tmp);
+    }
 
+    public static function readAll($lim = 99) {
+        $tmp = parent::readAll($lim);
+        $data = array();
+        foreach ($tmp as $item) {
+            array_push($data, self::arr2Obj($item));
+        }
+        return $data;
+    }
 
-    
 
 }
