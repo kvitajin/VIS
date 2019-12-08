@@ -1,5 +1,7 @@
 <?php
 require_once __DIR__ ."/../data/Foto.php";
+require_once __DIR__ ."/../repository/AlbumRepository.php";
+
 use Connection\Connection;
 
 
@@ -7,6 +9,16 @@ class FotoRepository extends Repository {
 
     static function getTableName() {
         return "foto";
+    }
+    static function arr2Obj($data){
+        $out= new Foto();
+        $out->id=intval($data["id"]);
+        $out->datum=$data["datum"];
+        $out->sirka=intval($data["sirka"]);
+        $out->nazevSouboru=$data["nazev_souboru"];
+        $out->viditelna=intval($data["viditelna"]);
+        $out->ckIdAlbum=intval($data["ck_id_album"]);
+        return $out;
     }
 
     static function readAllDeep($idAlbum) {
@@ -43,13 +55,13 @@ class FotoRepository extends Repository {
     }
 
     static function readDeep($id) {
-        $tmpFoto=parent::read($id);
+        $tmpFoto= self::read($id);
         $tmpFoto->ckIdAlbum=AlbumRepository::readDeep($tmpFoto->ckIdAlbum);
         return $tmpFoto;
     }
 
     static function readRearDeep($id, $deep) {
-        $tmpFoto=parent::read($id);
+        $tmpFoto=self::read($id);
         if (--$deep){
             $tmpFoto->ickIdAlbum=AlbumRepository::readRearDeep($tmpFoto->id, $deep);
         }
@@ -129,6 +141,10 @@ class FotoRepository extends Repository {
             $i++;
         }
         return $records;
+    }
+
+    static function read($id) {
+        return self::arr2Obj(parent::read($id));
     }
 
 }
