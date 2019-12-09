@@ -1,5 +1,5 @@
 <?php
-require_once "src/data/Dokument.php";
+require_once __DIR__ . "/../data/Dokument.php";
 
 use Connection\Connection;
 
@@ -135,5 +135,33 @@ class DokumentRepository extends Repository {
         return self::create($data);
 
     }
+
+    static function arry2Obj($dokument){
+        $tmpDokument= new Dokument();
+        $tmpDokument->id=intval($dokument["id"]);
+        $tmpDokument->nadpis=$dokument["nadpis"];
+        $tmpDokument->podnadpis=$dokument["podnadpis"]; //todo v db chybi podpadpis
+        $tmpDokument->uri=$dokument["uri"];
+        $tmpDokument->obsah=$dokument["obsah"];
+        $tmpDokument->datumVyveseni=$dokument["datum_vyveseni"];
+        $tmpDokument->datumStazeni=$dokument["datum_stazeni"];
+        $tmpDokument->datum=$dokument["datum"];
+        $tmpDokument->obrazek=$dokument["obrazek"];
+        $tmpDokument->ckIdDruhDokumentu=$dokument["ck_id_druh_dokumentu"];
+        $tmpDokument->ckIdKategorieDokumentu=$dokument["ck_id_kategorie_dokumentu"];
+        return $tmpDokument;
+    }
+
+    static function readAllDruh($id, $lim=99){
+        $sql = "SELECT * FROM " . static::getTableName() ." WHERE ck_id_druh_dokumentu= ". $id . " LIMIT " . $lim ;
+        $statement = Connection::pdo()->prepare($sql);
+        $statement->execute();
+        $data= array();
+        while ($tmp = $statement->fetch(PDO::FETCH_ASSOC)) {
+            array_push($data, self::arry2Obj($tmp));
+        }
+        return $data;
+    }
+
 
 }

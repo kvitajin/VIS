@@ -14,6 +14,7 @@ CREATE TABLE album (
 CREATE TABLE dokument (
 	id INTEGER PRIMARY KEY,
 	nadpis TEXT NOT NULL,
+	podnadpis TEXT NOT NULL,
 	uri TEXT NOT NULL,
 	obsah TEXT NOT NULL,
 	datum TEXT NOT NULL,

@@ -1,7 +1,6 @@
 <?php
-require_once "Repository.php";
-require_once "src/data/DruhDokumentu.php";
-require_once "src/repository/DokumentRepository.php";
+require_once __DIR__ . "/../data/DruhDokumentu.php";
+require_once __DIR__ . "/../repository/DokumentRepository.php";
 
 use Connection\Connection;
 
@@ -13,19 +12,19 @@ class DruhDokumentuRepository extends Repository {
     }
 
     static function readAllDeep($lim) {
-        return parent::readAll($lim);
+        return self::readAll($lim);
     }
 
     static function readAllRearDeep($lim, $deep) {
-        return parent::readAll($lim);
+        return self::readAll($lim);
     }
 
     static function readDeep($id) {
-        return parent::read($id);
+        return self::read($id);
     }
 
     static function readRearDeep($id, $deep) {
-        return parent::read($id);
+        return self::read($id);
     }
 
     static function update($data) {
@@ -48,6 +47,7 @@ class DruhDokumentuRepository extends Repository {
             $statement->execute();
         }
         Connection::pdo()->commit();
+        return true;
     }
 
     static function create($data) {
@@ -66,25 +66,27 @@ class DruhDokumentuRepository extends Repository {
         return self::create($data);
     }
 
-    static function readAllDokuments($id){
-        $dokumenty= DokumentRepositry::read($id);       //todo tohle je shit, opravit
-        $zvracej=array();
-        foreach($dokumenty as $dokument){
-            $tmpDokument= new Dokument();
-            $tmpDokument->id=intval($dokument["id"]);
-            $tmpDokument->nadpis=$dokument["nadpis"];
-            $tmpDokument->podnadpis=$dokument["podnadpis"]; //todo v db chybi podpadpis
-            $tmpDokument->uri=$dokument["uri"];
-            $tmpDokument->obsah=$dokument["obsah"];
-            $tmpDokument->datumVyveseni=$dokument["datum_vyveseni"];
-            $tmpDokument->datumStazeni=$dokument["datum_stazeni"];
-            $tmpDokument->datum=$dokument["datum"];
-            $tmpDokument->obrazek=$dokument["obrazek"];
-            $tmpDokument->ckIdDruhDokumentu=$dokument["ck_id_druh_dokumentu"];
-            $tmpDokument->ckIdKategorieDokumentu=$dokument["ck_id_kategorie_dokumentu"];
-            array_push($zvracej, $tmpDokument);
-        }
-        return $zvracej;
+    static function arr2Obj($data){
+        $tmp= new DruhDokumentu();
+        $tmp->id=$data["id"];
+        $tmp->nazev=$data["nazev"];
+        $tmp->uri=$data["uri"];
+        return $tmp;
+
     }
+    static function read($id) {
+        $tmp=parent::read($id);
+        return self::arr2Obj($tmp);
+    }
+
+    static function readAll($lim = 99) {
+        $tmpData= parent::readAll($lim);
+        $data= array();
+        foreach ($tmpData as $item) {
+            array_push($data, self::arr2Obj($item));
+        }
+        return $data;
+    }
+
 
 }

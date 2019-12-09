@@ -32,6 +32,7 @@ abstract class Repository {
         $sql = "DELETE FROM " . static::getTableName() . " WHERE id=" . $id;
         $statement = Connection::pdo()->prepare($sql);
         $statement->execute();
+        return true;
     }
     abstract static function create($data);
     abstract static function createDeep($data);
