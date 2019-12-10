@@ -1,5 +1,7 @@
 <?php
 require_once __DIR__ . "/../data/Dokument.php";
+require_once __DIR__ . "/../repository/DruhDokumentuRepository.php";
+require_once __DIR__ . "/../repository/KategorieDokumentuRepository.php";
 
 use Connection\Connection;
 
@@ -19,9 +21,9 @@ class DokumentRepository extends Repository {
     }
 
     static function readDeep($id) {
-        $tmpDokument= parent::read($id);
+        $tmpDokument= self::arry2Obj(parent::read($id));
         $tmpDokument->ckIdDruhDokumentu=DruhDokumentuRepository::readDeep($tmpDokument->ckIdDruhDokumentu);
-        $tmpDokument->ckIdKategorieDokumentu=DruhDokumentuRepository::readDeep($tmpDokument->ckIdKategorieDokumentu);
+        $tmpDokument->ckIdKategorieDokumentu=KategorieDokumentuRepository::readDeep($tmpDokument->ckIdKategorieDokumentu);
         return $tmpDokument;
     }
 
@@ -113,7 +115,7 @@ class DokumentRepository extends Repository {
     static function create($data) {
         $table = self::getTableName();
         $sql = "INSERT INTO ${table}(nadpis, podnadpis, uri, obsah, datum, datum_vyveseni, datum_stazeni, obrazek, ck_id_druh_dokumentu, ck_id_kategorie_dokumentu) 
-	    VALUES (:nadpis, :podnadpis, :uri, :obsah, :datum, :vyveseni, :stazeni, :obrazek, , :ck_id_druh_dokumentu, ck_id_kategorie_dokumentu)";
+	    VALUES (:nadpis, :podnadpis, :uri, :obsah, :datum, :vyveseni, :stazeni, :obrazek, :ck_id_druh_dokumentu, :ck_id_kategorie_dokumentu)";
         $statement = Connection::pdo()->prepare($sql);
         $statement->execute(array(
             ':nadpis' => $data->nadpis,
@@ -163,5 +165,9 @@ class DokumentRepository extends Repository {
         return $data;
     }
 
+    public static function read($id) {
+        $tmp= parent::read($id);
+        return self::arry2Obj($tmp);
+    }
 
 }
