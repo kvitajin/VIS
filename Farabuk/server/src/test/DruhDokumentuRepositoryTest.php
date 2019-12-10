@@ -33,7 +33,7 @@ class DruhDokumentuRepositoryTest extends TestCase {
     }
 
     public function testReadDeep() {
-//      var_dump(DruhDokumentuRepository::readDeep(1));
+      var_dump(DruhDokumentuRepository::readDeep(1));
         $this->assertTrue(DruhDokumentuRepository::readDeep(1)!==null);
     }
 

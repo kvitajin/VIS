@@ -12,12 +12,29 @@ class DokumentRepository extends Repository {
         return "dokument";
     }
 
-    static function readAllDeep($lim) {
-        // TODO: Implement readAllDeep() method.
+    static function readAllDeep($idObec, $lim=99) {
+        $sql = "SELECT * FROM " . static::getTableName() . " JOIN dokument_obec on ". static::getTableName(). ".id=dokument_obec.ck_id_dokument WHERE dokument_obec.ck_id_obec=" . $idObec;
+        $statement = Connection::pdo()->prepare($sql);
+        $statement->execute();
+        $data=array();
+        while ($tmp = $statement->fetch(PDO::FETCH_ASSOC)) {
+            $item= self::arry2Obj($tmp);
+            $item->ckIdDruhDokumentu=DruhDokumentuRepository::readDeep($item->ckIdDruhDokumentu);
+            $item->ckIdKategorieDokumentu=KategorieDokumentuRepository::readDeep($item->ckIdKategorieDokumentu);
+            array_push($data, $item);
+        }
+        return $data;
     }
 
-    static function readAllRearDeep($lim, $deep) {
-        // TODO: Implement readAllRearDeep() method.
+    static function readAllRearDeep($deep, $lim=99) {
+        $tmp = self::readAll($lim);
+        if (--$deep){
+            foreach ($tmp as $item) {
+                $item->ckIdDruhDokumentu=DruhDokumentuRepository::readRearDeep($item->ckIdDruhDokumentu, $deep);
+                $item->ckIdKategorieDokumentu=KategorieDokumentuRepository::readRearDeep($item->ckIdKategorieDokumentu, $deep);
+            }
+        }
+        return $tmp;
     }
 
     static function readDeep($id) {
@@ -28,7 +45,7 @@ class DokumentRepository extends Repository {
     }
 
     static function readRearDeep($id, $deep) {
-        $tmpDokument= parent::read($id);
+        $tmpDokument= self::arry2Obj(parent::read($id));
         if (--$deep){
             $tmpDokument->ckIdDruhDokumentu=DruhDokumentuRepository::readRearDeep($tmpDokument->ckIdDruhDokumentu, $deep);
             $tmpDokument->ckIdKategorieDokumentu=DruhDokumentuRepository::readRearDeep($tmpDokument->ckIdKategorieDokumentu, $id);
@@ -37,6 +54,7 @@ class DokumentRepository extends Repository {
             $tmpDokument->ckIdDruhDokumentu=DruhDokumentuRepository::readRearDeep($tmpDokument->ckIdDruhDokumentu, $deep);
             $tmpDokument->ckIdKategorieDokumentu=DruhDokumentuRepository::readRearDeep($tmpDokument->ckIdKategorieDokumentu, $id);
         }
+        return $tmpDokument;
 
     }
 
@@ -56,7 +74,7 @@ class DokumentRepository extends Repository {
             $sql = "UPDATE ${table} SET podnadpis=(:podnadpis) WHERE id=${idDokument}";
             //var_dump($sql);
             $statement = Connection::pdo()->prepare($sql);
-            $statement->bindValue(':nadpis', $data->nadpis);
+            $statement->bindValue(':podnadpis', $data->podnadpis);
             $statement->execute();
         }
         if ($data->uri) {
@@ -110,6 +128,7 @@ class DokumentRepository extends Repository {
             $statement->execute();
         }
         Connection::pdo()->commit();
+        return true;
     }
 
     static function create($data) {
@@ -149,8 +168,8 @@ class DokumentRepository extends Repository {
         $tmpDokument->datumStazeni=$dokument["datum_stazeni"];
         $tmpDokument->datum=$dokument["datum"];
         $tmpDokument->obrazek=$dokument["obrazek"];
-        $tmpDokument->ckIdDruhDokumentu=$dokument["ck_id_druh_dokumentu"];
-        $tmpDokument->ckIdKategorieDokumentu=$dokument["ck_id_kategorie_dokumentu"];
+        $tmpDokument->ckIdDruhDokumentu=intval($dokument["ck_id_druh_dokumentu"]);
+        $tmpDokument->ckIdKategorieDokumentu=intval($dokument["ck_id_kategorie_dokumentu"]);
         return $tmpDokument;
     }
 
@@ -169,5 +188,38 @@ class DokumentRepository extends Repository {
         $tmp= parent::read($id);
         return self::arry2Obj($tmp);
     }
+
+    static function readAllKategorie($id, $lim=99){
+        $sql = "SELECT * FROM " . static::getTableName() ." WHERE ck_id_kategorie_dokumentu= ". $id . " LIMIT " . $lim ;
+        $statement = Connection::pdo()->prepare($sql);
+        $statement->execute();
+        $data= array();
+        while ($tmp = $statement->fetch(PDO::FETCH_ASSOC)) {
+            array_push($data, self::arry2Obj($tmp));
+        }
+        return $data;
+    }
+
+    static function readAllKategorieDruh($idKategorie, $idDruh, $lim=99){
+        $sql = "SELECT * FROM " . static::getTableName() ." WHERE ck_id_druh_dokumentu= ". $idDruh . " AND ck_id_kategorie_dokumentu= ". $idKategorie. " LIMIT " . $lim ;
+        $statement = Connection::pdo()->prepare($sql);
+        $statement->execute();
+        $data= array();
+        while ($tmp = $statement->fetch(PDO::FETCH_ASSOC)) {
+            array_push($data, self::arry2Obj($tmp));
+        }
+        return $data;
+    }
+
+
+    public static function readAll($lim = 99) {
+        $tmp = parent::readAll($lim);
+        $data = array();
+        foreach ($tmp as $item) {
+            array_push($data, self::arry2Obj($item));
+        }
+        return $data;
+    }
+
 
 }

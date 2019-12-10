@@ -4,4 +4,7 @@
     <file url="file://$PROJECT_DIR$/server/db/create.sql" dialect="GenericSQL" />
     <file url="PROJECT" dialect="SQLite" />
   </component>
+  <component name="SqlResolveMappings">
+    <file url="file://$PROJECT_DIR$/server/src/repository/DokumentRepository.php" scope="{&quot;node&quot;:{  &quot;@negative&quot;:&quot;1&quot;,  &quot;group&quot;:{   &quot;@kind&quot;:&quot;root&quot;,   &quot;node&quot;:{    &quot;@negative&quot;:&quot;1&quot;   }  } }}" />
+  </component>
 </project>
