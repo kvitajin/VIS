@@ -1,5 +1,5 @@
 <?php
-require_once "src/repository/RelRepository.php";
+require_once __DIR__ . "/../repository/RelRepository.php";
 
 class SkupinaUzivatel  {
 

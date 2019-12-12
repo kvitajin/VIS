@@ -1,8 +1,8 @@
 <?php
-require_once "src/repository/Connection.php";
-require_once "src/repository/Repository.php";
-require_once "Skupina.php";
-require_once "SkupinaUzivatel.php";
+require_once __DIR__ . "/../repository/Connection.php";
+require_once __DIR__ . "/../repository/Repository.php";
+require_once __DIR__ . "/../data/Skupina.php";
+require_once __DIR__ . "/../data/SkupinaUzivatel.php";
 
 //TODO dodat dataFily
 

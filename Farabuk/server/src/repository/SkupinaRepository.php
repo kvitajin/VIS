@@ -1,7 +1,7 @@
 <?php
 
-require_once "Repository.php";
-require_once "src/data/Skupina.php";
+require_once __DIR__ . "/../repository/Repository.php";
+require_once __DIR__ . "/../data/Skupina.php";
 use Connection\Connection;
 
 

@@ -2,15 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4074300-0843-4455-99d1-a5a019a75b7f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/test/UzivatelRepositoryTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/db/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/server/db/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/db/db.sqlite3-shm" beforeDir="false" afterPath="$PROJECT_DIR$/server/db/db.sqlite3-shm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/db/db.sqlite3-wal" beforeDir="false" afterPath="$PROJECT_DIR$/server/db/db.sqlite3-wal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/data/Skupina.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/data/Skupina.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/data/SkupinaUzivatel.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/data/SkupinaUzivatel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/data/Uzivatel.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/data/Uzivatel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/repository/DokumentRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/DokumentRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/test/DokumentRepositoryTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/DokumentRepositoryTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/test/DruhDokumentuRepositoryTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/DruhDokumentuRepositoryTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/repository/RelRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/RelRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/repository/Repository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/Repository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/repository/SkupinaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/SkupinaRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/repository/SkupinaUzivatelRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/SkupinaUzivatelRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/repository/UzivatelRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/UzivatelRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,14 +61,7 @@
         <item name="db" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="dokument_obec: table" type="3d80ac25:SqliteImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="uzivatel: table" type="3d80ac25:SqliteImplModel$Table" />
+        <item name="skupina: table" type="3d80ac25:SqliteImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -113,34 +112,34 @@
       <recent name="$PROJECT_DIR$/server/src/repository" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.DokumentRepositoryTest">
-    <configuration name="DokumentRepositoryTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="DokumentRepositoryTest" file="$PROJECT_DIR$/server/src/test/DokumentRepositoryTest.php" scope="Class" />
+  <component name="RunManager" selected="PHPUnit.UzivatelRepositoryTest.testRead">
+    <configuration name="UzivatelRepositoryTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="UzivatelRepositoryTest" file="$PROJECT_DIR$/server/src/test/UzivatelRepositoryTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="DokumentRepositoryTest.testCreateDeep" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="DokumentRepositoryTest" file="$PROJECT_DIR$/server/src/test/DokumentRepositoryTest.php" method="testCreateDeep" scope="Method" />
+    <configuration name="UzivatelRepositoryTest.testCreate" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="UzivatelRepositoryTest" file="$PROJECT_DIR$/server/src/test/UzivatelRepositoryTest.php" method="testCreate" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="DokumentRepositoryTest.testDelete" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="DokumentRepositoryTest" file="$PROJECT_DIR$/server/src/test/DokumentRepositoryTest.php" method="testDelete" scope="Method" />
+    <configuration name="UzivatelRepositoryTest.testCreateDeep" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="UzivatelRepositoryTest" file="$PROJECT_DIR$/server/src/test/UzivatelRepositoryTest.php" method="testCreateDeep" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="DokumentRepositoryTest.testReadAllRearDeep" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="DokumentRepositoryTest" file="$PROJECT_DIR$/server/src/test/DokumentRepositoryTest.php" method="testReadAllRearDeep" scope="Method" />
+    <configuration name="UzivatelRepositoryTest.testRead" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="UzivatelRepositoryTest" file="$PROJECT_DIR$/server/src/test/UzivatelRepositoryTest.php" method="testRead" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="DruhDokumentuRepositoryTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="DruhDokumentuRepositoryTest" file="$PROJECT_DIR$/server/src/test/DruhDokumentuRepositoryTest.php" scope="Class" />
+    <configuration name="UzivatelRepositoryTest.testReadDeep" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="UzivatelRepositoryTest" file="$PROJECT_DIR$/server/src/test/UzivatelRepositoryTest.php" method="testReadDeep" scope="Method" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.DokumentRepositoryTest" />
-        <item itemvalue="PHPUnit.DokumentRepositoryTest.testReadAllRearDeep" />
-        <item itemvalue="PHPUnit.DruhDokumentuRepositoryTest" />
-        <item itemvalue="PHPUnit.DokumentRepositoryTest.testCreateDeep" />
-        <item itemvalue="PHPUnit.DokumentRepositoryTest.testDelete" />
+        <item itemvalue="PHPUnit.UzivatelRepositoryTest.testRead" />
+        <item itemvalue="PHPUnit.UzivatelRepositoryTest.testCreateDeep" />
+        <item itemvalue="PHPUnit.UzivatelRepositoryTest.testCreate" />
+        <item itemvalue="PHPUnit.UzivatelRepositoryTest.testReadDeep" />
+        <item itemvalue="PHPUnit.UzivatelRepositoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -157,7 +156,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="root:db" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@165e1b82" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@4a76c494" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
             </expand>
             <select />
@@ -197,7 +196,8 @@
       <workItem from="1575754836817" duration="1037000" />
       <workItem from="1575764578038" duration="15209000" />
       <workItem from="1575895851402" duration="10816000" />
-      <workItem from="1575992933687" duration="17924000" />
+      <workItem from="1575992933687" duration="22063000" />
+      <workItem from="1576107858012" duration="3745000" />
     </task>
     <servers />
   </component>
@@ -254,26 +254,26 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="693" y="302" width="524" height="510" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1575848895669" />
-    <state x="531" y="269" width="424" height="491" key="FileChooserDialogImpl" timestamp="1575997691682">
+    <state x="531" y="269" width="424" height="491" key="FileChooserDialogImpl" timestamp="1576019287731">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="531" y="269" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1575997691682" />
-    <state width="1874" height="275" key="GridCell.Tab.0.bottom" timestamp="1576016377767">
+    <state x="531" y="269" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1576019287731" />
+    <state width="1874" height="275" key="GridCell.Tab.0.bottom" timestamp="1576111574932">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1576016377767" />
-    <state width="1874" height="275" key="GridCell.Tab.0.center" timestamp="1576016377766">
+    <state width="1874" height="275" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1576111574932" />
+    <state width="1874" height="275" key="GridCell.Tab.0.center" timestamp="1576111574931">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1576016377766" />
-    <state width="1874" height="275" key="GridCell.Tab.0.left" timestamp="1576016377766">
+    <state width="1874" height="275" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1576111574931" />
+    <state width="1874" height="275" key="GridCell.Tab.0.left" timestamp="1576111574931">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1576016377766" />
-    <state width="1874" height="275" key="GridCell.Tab.0.right" timestamp="1576016377767">
+    <state width="1874" height="275" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1576111574931" />
+    <state width="1874" height="275" key="GridCell.Tab.0.right" timestamp="1576111574932">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1576016377767" />
+    <state width="1874" height="275" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1576111574932" />
     <state width="1874" height="340" key="GridCell.Tab.1.bottom" timestamp="1575725924000">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -306,14 +306,14 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="100" y="127" width="1720" height="853" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1575675851173" />
-    <state x="620" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1575993322168">
+    <state x="620" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1576108115202">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="620" y="381" key="com.intellij.ide.util.TipDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1575993322168" />
-    <state x="549" y="244" width="811" height="632" key="com.jetbrains.php.test.PhpNewTestDialog" timestamp="1575997705658">
+    <state x="620" y="381" key="com.intellij.ide.util.TipDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576108115202" />
+    <state x="549" y="244" width="811" height="632" key="com.jetbrains.php.test.PhpNewTestDialog" timestamp="1576019299320">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="549" y="244" width="811" height="632" key="com.jetbrains.php.test.PhpNewTestDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1575997705658" />
+    <state x="549" y="244" width="811" height="632" key="com.jetbrains.php.test.PhpNewTestDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576019299320" />
     <state x="624" y="196" width="672" height="676" key="search.everywhere.popup" timestamp="1575681044009">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>

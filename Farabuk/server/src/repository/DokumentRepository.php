@@ -55,7 +55,6 @@ class DokumentRepository extends Repository {
             $tmpDokument->ckIdKategorieDokumentu=DruhDokumentuRepository::readRearDeep($tmpDokument->ckIdKategorieDokumentu, $id);
         }
         return $tmpDokument;
-
     }
 
     static function update($data) {

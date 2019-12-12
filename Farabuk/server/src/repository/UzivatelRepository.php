@@ -1,8 +1,11 @@
 <?php
 
-require_once "Repository.php";
-require_once "src/data/Uzivatel.php";
-require_once "SkupinaRepository.php";
+require_once __DIR__ . "/../repository/Repository.php";
+require_once __DIR__ . "/../data/Uzivatel.php";
+require_once __DIR__ . "/../repository/SkupinaRepository.php";
+require_once __DIR__ . "/../repository/SkupinaUzivatelRepository.php";
+require_once __DIR__ . "/../repository/ObecRepository.php";
+
 use Connection\Connection;
 
 class UzivatelRepository extends Repository {
@@ -10,7 +13,7 @@ class UzivatelRepository extends Repository {
         return "uzivatel";
     }
     static function read($id) {
-        $sql = "SELECT * FROM " . static::getTableName() . " WHERE id=" . $id;
+        $sql = "SELECT id, nick, heslo, email, datum_narozeni, ban, ck_id_obec FROM " . static::getTableName() . " WHERE id=" . $id;
         $statement = Connection::pdo()->prepare($sql);
         $statement->execute();
         $record = $statement->fetch(PDO::FETCH_ASSOC);
@@ -20,18 +23,16 @@ class UzivatelRepository extends Repository {
         $uzivatel->nick=$record["nick"];
         $uzivatel->heslo=$record["heslo"];
         $uzivatel->email=$record["email"];
-        $uzivatel->datumNarozeni=$record["datim_narozeni"];
-        $uzivatel->ban= intval($record[ban]);
+        $uzivatel->datumNarozeni=$record["datum_narozeni"];
+        $uzivatel->ban= intval($record["ban"]);
         $uzivatel->ckIdObec=intval($record["ck_id_obec"]);
-//        var_dump($record);
-//        echo "\n\n";
-        //var_dump($uzivatel);
+
         $uzivatel->skupina=SkupinaUzivatelRepository::read($uzivatel->id, self::getTableName());
         return $uzivatel;
     }
 
     static function readAllDeep($lim) {
-        // TODO: Implement readAllDeep() method.
+        //TODO: nejake hovna
     }
 
     static function readAllRearDeep($lim, $deep) {
@@ -40,7 +41,11 @@ class UzivatelRepository extends Repository {
 
     static function readDeep($id) {
         $tmp= self::read($id);
-        $tmp->likeDokument= a;      //todo tady dodelat, ale prve vsechny vazebni tabulky
+        $tmp->ckIdObec= ObecRepository::readDeep($tmp->ckIdObec);
+        foreach ($tmp->skupina as $item){
+            $item=SkupinaUzivatelRepository::read($item->id, self::getTableName());
+        }
+        return $tmp;
     }
 
     static function readRearDeep($id, $deep) {
@@ -71,18 +76,23 @@ class UzivatelRepository extends Repository {
                 return Connection::pdo()->lastInsertId();
             }
         }
-
-
-
-
-
-
-
-
+        return null;
     }
 
     static function createDeep($data) {
         // TODO: Implement createDeep() method.
     }
+
+    static function arr2Obj($data){
+        $tmp = new Uzivatel();
+        $tmp->id=intval($data["id"]);
+        $tmp->nick=$data["nick"];
+        $tmp->datumNarozeni=$data["datum_narozeni"];
+        $tmp->ban= intval($data["ban"]);
+        $tmp->ckIdObec=intval($data["ck_id_obec"]);
+
+        return $tmp;
+    }
+
 
 }

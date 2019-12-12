@@ -1,7 +1,7 @@
 <?php
-require_once "src/data/SkupinaUzivatel.php";
-require_once "src/data/Skupina.php";
-require_once "src/data/Uzivatel.php";
+require_once __DIR__ . "/../data/SkupinaUzivatel.php";
+require_once __DIR__ . "/../data/Skupina.php";
+require_once __DIR__ . "/../data/Uzivatel.php";
 use Connection\Connection;
 
 

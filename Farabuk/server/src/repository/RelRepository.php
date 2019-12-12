@@ -1,5 +1,5 @@
 <?php
-require_once "Connection.php";
+require_once __DIR__ ."/../repository/Connection.php";
 
 abstract class RelRepository {
     abstract static function getTableName();

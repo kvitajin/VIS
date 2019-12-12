@@ -1,6 +1,6 @@
 <?php
 use Connection\Connection;
-require_once "Connection.php";
+require_once __DIR__ . "/../repository/Connection.php";
 abstract class Repository {
     abstract static function getTableName();
 
