@@ -5,13 +5,13 @@
       <change afterPath="$PROJECT_DIR$/client/index.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/client/stranky/obec.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/server/dev.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/spojova/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/db/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/server/db/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/db/db.sqlite3-shm" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/db/db.sqlite3-wal" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/repository/SkupinaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/SkupinaRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/spojova/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/spojova/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/test/AlbumRepositoryTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/AlbumRepositoryTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -203,7 +203,7 @@
       <workItem from="1575992933687" duration="22063000" />
       <workItem from="1576107858012" duration="9418000" />
       <workItem from="1576164016280" duration="6442000" />
-      <workItem from="1576235386204" duration="4622000" />
+      <workItem from="1576235386204" duration="5125000" />
     </task>
     <servers />
   </component>

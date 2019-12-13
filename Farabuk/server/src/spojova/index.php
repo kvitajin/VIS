@@ -1,6 +1,6 @@
 <?php
 
-require 'flight/Flight.php';
+require __DIR__ . '/../../vendor/mikecao/flight/flight/Flight.php';
 
 Flight::route('POST /',function (){
     require __DIR__ ."/../../../client/index.php";
