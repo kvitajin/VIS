@@ -18,11 +18,11 @@ class SkupinaRepository extends Repository {
     }
 
     static function readDeep($id) {
-        return parent::read($id);
+        return self::arr2Obj(parent::read($id));
     }
 
     static function readRearDeep($id, $deep) {
-        return parent::read($id);
+        return self::arr2Obj(parent::read($id));
     }
 
     static function update($data) {
@@ -60,4 +60,13 @@ class SkupinaRepository extends Repository {
     static function createDeep($data) {
         return self::create($data);
     }
+
+    static function arr2Obj($data){
+        $tmp= new Skupina();
+        $tmp->id=intval($data["id"]);
+        $tmp->nazev=$data["nazev"];
+        $tmp->opravneni=intval($data["opravneni"]);
+        return $tmp;
+    }
+
 }

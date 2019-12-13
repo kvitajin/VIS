@@ -17,8 +17,8 @@ class AlbumRepositoryTest extends TestCase {
     }
 
     public function testReadAll() {
-//        var_dump(AlbumRepository::readAll());
-        $this->assertTrue(AlbumRepository::readAll(2)!= null);
+        var_dump(AlbumRepository::readAll());
+//        $this->assertTrue(AlbumRepository::readAll(2)!= null);
 
     }
 
