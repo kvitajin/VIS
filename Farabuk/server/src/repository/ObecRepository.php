@@ -100,6 +100,22 @@ class ObecRepository extends Repository {
         $obec->viditelna= intval($tmp['viditelna']);
         return $obec;
     }
+    static function readUri( $uri){
+        $sql = "SELECT * FROM " . static::getTableName() . " WHERE uri=(:uri)";
+        $statement = Connection::pdo()->prepare($sql);
+        $statement->execute(array(
+            'uri' => $uri
+        ));
+        $record = $statement->fetch(PDO::FETCH_ASSOC);
+        $data=new Obec();
+        $data->id=intval($record["id"]);
+        $data->erb= $record['erb'];
+        $data->nazev= $record['nazev'];
+        $data->uri= $record['uri'];
+        $data->viditelna= intval($record['viditelna']);
+        return $data;
+    }
+
     static function delete($id) {
         $tmp= new Obec();
         $tmp->id= $id;

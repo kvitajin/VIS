@@ -2,17 +2,63 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4074300-0843-4455-99d1-a5a019a75b7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/stranky/obec.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/dev.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/stranky/login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/stranky/singup.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/spojova/makeLogin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/spojova/makeRegister.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/db/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/server/db/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/db/db.sqlite3-shm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/db/db.sqlite3-wal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/repository/SkupinaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/SkupinaRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/stranky/obec.php" beforeDir="false" afterPath="$PROJECT_DIR$/client/stranky/obec.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dev.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/dev.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/repository/ObecRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/ObecRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/repository/UzivatelRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/UzivatelRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/spojova/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/spojova/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/test/AlbumRepositoryTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/AlbumRepositoryTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/autoload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/VERSION" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/flight/Engine.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/flight/Flight.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/flight/autoload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/flight/core/Dispatcher.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/flight/core/Loader.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/flight/net/Request.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/flight/net/Response.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/flight/net/Route.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/flight/net/Router.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/flight/template/View.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/flight/util/Collection.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/tests/AutoloadTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/tests/DispatcherTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/tests/FilterTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/tests/FlightTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/tests/LoaderTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/tests/MapTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/tests/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/tests/RedirectTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/tests/RegisterTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/tests/RenderTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/tests/RequestTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/tests/RouterTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/tests/VariableTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/tests/ViewTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/tests/classes/Factory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/tests/classes/Hello.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/tests/classes/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/tests/views/hello.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/tests/views/layouts/layout.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mikecao/flight/tests/views/world.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +104,13 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
         <item name="skupina: table" type="3d80ac25:SqliteImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="uzivatel: table" type="3d80ac25:SqliteImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -152,17 +205,7 @@
       <list>
         <serviceView>
           <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:db" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:db" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@58dd55c2" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </treeState>
         </serviceView>
@@ -203,7 +246,8 @@
       <workItem from="1575992933687" duration="22063000" />
       <workItem from="1576107858012" duration="9418000" />
       <workItem from="1576164016280" duration="6442000" />
-      <workItem from="1576235386204" duration="5125000" />
+      <workItem from="1576235386204" duration="14034000" />
+      <workItem from="1576263172710" duration="6083000" />
     </task>
     <servers />
   </component>
@@ -296,14 +340,14 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1874" height="340" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1575725923999" />
-    <state x="627" y="364" width="703" height="385" key="NewPhpClassDialog" timestamp="1576181160749">
+    <state x="627" y="364" width="703" height="385" key="NewPhpClassDialog" timestamp="1576263967319">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="627" y="364" width="703" height="385" key="NewPhpClassDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576181160749" />
-    <state x="756" y="478" width="397" height="158" key="NewPhpFileDialog" timestamp="1576243305766">
+    <state x="627" y="364" width="703" height="385" key="NewPhpClassDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576263967319" />
+    <state x="756" y="478" width="397" height="158" key="NewPhpFileDialog" timestamp="1576266575578">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="756" y="478" width="397" height="158" key="NewPhpFileDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576243305766" />
+    <state x="756" y="478" width="397" height="158" key="NewPhpFileDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576266575578" />
     <state x="449" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1576154679309">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -316,10 +360,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="100" y="127" width="1720" height="853" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1575675851173" />
-    <state x="620" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1576235394554">
+    <state x="620" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1576263172702">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="620" y="381" key="com.intellij.ide.util.TipDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576235394554" />
+    <state x="620" y="381" key="com.intellij.ide.util.TipDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576263172702" />
     <state x="732" y="473" width="445" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576177882227">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -328,6 +372,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="549" y="244" width="811" height="632" key="com.jetbrains.php.test.PhpNewTestDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576019299320" />
+    <state x="678" y="195" width="554" height="723" key="refactoring.ChangeSignatureDialog" timestamp="1576257413978">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="678" y="195" width="554" height="723" key="refactoring.ChangeSignatureDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576257413978" />
     <state x="624" y="196" width="672" height="676" key="search.everywhere.popup" timestamp="1575681044009">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>

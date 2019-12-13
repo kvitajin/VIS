@@ -94,5 +94,29 @@ class UzivatelRepository extends Repository {
         return $tmp;
     }
 
+    static function userExists($email){
+        $sql = "SELECT count(*) FROM " . static::getTableName() . " WHERE email= (:email)";
+        $statement = Connection::pdo()->prepare($sql);
+        $statement->execute(array('email'=>$email));
+        $record = $statement->fetch(PDO::FETCH_ASSOC);
+        //return $record;
+        if ($record){
+            return true;
+        }
+        return false;
+    }
+
+    static function getUserPasswd($email){
+        $sql = "SELECT heslo FROM " . static::getTableName() . " WHERE email= (:email)";
+        $statement = Connection::pdo()->prepare($sql);
+        $statement->execute(array('email'=>$email));
+        $record = $statement->fetch(PDO::FETCH_ASSOC);
+        //return $record;
+        if ($record){
+            return $record["heslo"];
+        }
+    }
+
+
 
 }
