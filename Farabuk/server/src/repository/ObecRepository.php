@@ -1,5 +1,5 @@
 <?php
-require_once "Repository.php";
+require_once __DIR__ . "/Repository.php";
 require_once __DIR__ . "/../data/Obec.php";
 use Connection\Connection;
 

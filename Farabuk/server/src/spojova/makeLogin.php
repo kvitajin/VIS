@@ -6,12 +6,15 @@ session_start();
 
 $email=$_POST["email"];
 $passwd=$_POST["heslo"];
-
+//echo $email. "<br>";
 
 function loginUser($email, $passwd){
     if (UzivatelRepository::userExists($email)) {
         $dbpasswd = UzivatelRepository::getUserPasswd($email);
+//        var_dump($dbpasswd);
+//        echo "<br>//////////////////////<br>";
         if (password_verify($passwd, $dbpasswd)) {
+            echo "tuto";
             return  UzivatelRepository::read($email);
         }
         throw new Exception ("Wrong password");
@@ -19,12 +22,18 @@ function loginUser($email, $passwd){
     throw new Exception ("User not in DB");
 }
 try {
+    $user= new Uzivatel();
     $user=loginUser($email, $passwd);
+    //echo $user;
 }catch (Exception $e){
     echo "Exeption: "  . $e->getMessage();          //TODO pak predat do chybove stranky
 }finally{
-    $_SESSION["mail"]=$user["email"];
-    $_SESSION["nick"]=$user["nick"];
-    $_SESSION["ban"]=$user["ban"];
-    header("Location:/".Flight::get('obec'));
+    var_dump( $user);
+    $_SESSION["mail"]=$user->email;
+    $_SESSION["nick"]=$user->nick;
+    $_SESSION["ban"]=$user->ban;
+    $tmp=$_SESSION['obec'];
+    echo $tmp;
+        header('Location: /'.$tmp);
+        die();
 }

@@ -12,9 +12,10 @@ class UzivatelRepository extends Repository {
     static function getTableName() {
         return "uzivatel";
     }
-    static function read($id) {
-        $sql = "SELECT id, nick, heslo, email, datum_narozeni, ban, ck_id_obec FROM " . static::getTableName() . " WHERE id=" . $id;
+    static function read($email) {
+        $sql = "SELECT id, nick, heslo, email, datum_narozeni, ban, ck_id_obec FROM " . static::getTableName() . " WHERE email=(:email)";
         $statement = Connection::pdo()->prepare($sql);
+        $statement->bindValue(':email', $email);
         $statement->execute();
         $record = $statement->fetch(PDO::FETCH_ASSOC);
         //return $record;
@@ -58,23 +59,27 @@ class UzivatelRepository extends Repository {
 
     static function create($data) { //TODO overeni unikatnosti emailu
         //var_dump($data);
-        if ($data->heslo===$data->hesloZnova){
-            if($data->datumNarozeni) {           //TODO overeni veku
-                $data->heslo= password_hash($data->heslo, PASSWORD_DEFAULT);
-                $table = self::getTableName();
-                $sql = "INSERT INTO ${table}(nick, heslo, email, datum_narozeni, ban, ck_id_obec) 
+        if (!self::userExists($data->email)) {
+            if ($data->heslo === $data->hesloZnova) {
+                if ($data->datumNarozeni) {           //TODO overeni veku
+                    $data->heslo = password_hash($data->heslo, PASSWORD_DEFAULT);
+                    $table = self::getTableName();
+                    $sql = "INSERT INTO ${table}(nick, heslo, email, datum_narozeni, ban, ck_id_obec) 
 	    VALUES (:nick, :heslo, :email, :datum_narozeni, :ban, :ck_id_obec)";
-                $statement = Connection::pdo()->prepare($sql);
-                $statement->execute(array(
-                    ':nick' => $data->nick,
-                    ':heslo' => $data->heslo,
-                    ':email' => $data->email,
-                    ':datum_narozeni' => $data->datumNarozeni,
-                    ':ban' => $data->ban,
-                    ':ck_id_obec' => $data->ckIdObec
-                ));
-                return Connection::pdo()->lastInsertId();
+                    $statement = Connection::pdo()->prepare($sql);
+                    $statement->execute(array(
+                        ':nick' => $data->nick,
+                        ':heslo' => $data->heslo,
+                        ':email' => $data->email,
+                        ':datum_narozeni' => $data->datumNarozeni,
+                        ':ban' => $data->ban,
+                        ':ck_id_obec' => $data->ckIdObec
+                    ));
+                    return Connection::pdo()->lastInsertId();
+                }
+                header("Location: /error");
             }
+            header("Location: /error");
         }
         return null;
     }
@@ -97,24 +102,25 @@ class UzivatelRepository extends Repository {
     static function userExists($email){
         $sql = "SELECT count(*) FROM " . static::getTableName() . " WHERE email= (:email)";
         $statement = Connection::pdo()->prepare($sql);
-        $statement->execute(array('email'=>$email));
+        $statement->bindValue(':email', $email);
+        $statement->execute();
         $record = $statement->fetch(PDO::FETCH_ASSOC);
         //return $record;
-        if ($record){
+        //var_dump($record);
+        if (intval($record['count(*)'])){
             return true;
         }
         return false;
     }
 
     static function getUserPasswd($email){
-        $sql = "SELECT heslo FROM " . static::getTableName() . " WHERE email= (:email)";
+        $sql = "SELECT heslo FROM " . static::getTableName() . " WHERE email= :email";
         $statement = Connection::pdo()->prepare($sql);
-        $statement->execute(array('email'=>$email));
+        $statement->bindValue(':email', $email);
+        $statement->execute();
         $record = $statement->fetch(PDO::FETCH_ASSOC);
         //return $record;
-        if ($record){
-            return $record["heslo"];
-        }
+        return $record["heslo"];
     }
 
 

@@ -2,12 +2,19 @@
 <html lang="en">
 <head>
     <?php
+    session_start();
     use flight\Engine;
     require_once __DIR__ . "/../../server/src/repository/ObecRepository.php";
     $uri=Flight::get('obec');
+    $_SESSION['obec']=$uri;
     $obec=ObecRepository::readUri($uri);
     ?>
     <meta charset="UTF-8">
+
+
+
+
+
     <title><?php echo $obec->nazev;?> | Farabuk</title>
     <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.js"></script>
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/fomantic-ui@2.8.2/dist/semantic.min.css">
@@ -141,14 +148,27 @@
         <a class="item">Dokumenty</a>
         <a class="item">Alba</a>
         <div class="right menu">
-            <div class="item">
-                <a href="prihlaseni" class="ui primary icon button">Přihlásit se  </a>
-            </div>
-            <div class="item">
-                <a class="ui button">Registrovat</a>
-            </div>
+            <?php
+            if(!isset($_SESSION["mail"])){?>
+                <div class="item">
+                    <a href="prihlaseni" class="ui primary icon button">Přihlásit se  </a>
+                </div>
+                <div class="item">
+                    <a href="registrace" class="ui button">Registrovat</a>
+                </div>
+                <?php
+            }
+            else{?>
+                <div class="item">
+                    <a class="ui primary icon button"><?php echo $_SESSION['nick'];?>  </a>
+
+                </div>
+
+            <?php
+            }
+            ?>
         </div>
-    </div>
+    </div>x
 </div>
 
 <!-- Sidebar Menu -->
@@ -156,8 +176,18 @@
     <a class="active item">Domů</a>
     <a class="item">Dokumenty</a>
     <a class="item">Alba</a>
-    <a href="prihlaseni" class="item">Přihlásit se</a>
-    <a class="item">Registrovat</a>
+    <?php
+    if(!isset($_SESSION["mail"])){?>
+        <a href="prihlaseni" class="item">Přihlásit se</a>
+        <a href="registrace" class="item">Registrovat</a>
+        <?php
+    }else{?>
+        <div class="item">
+            <a class="ui primary icon button"><?php echo $_SESSION['nick'];?>  <i class="dropdown icon"></i>  </a>
+        </div>
+        <?php
+    }
+    ?>
 </div>
 
 
@@ -174,14 +204,28 @@
                 <a class="item">Dokumenty</a>
                 <a class="item">Alba</a>
                 <div class="right item">
-                    <a href="prihlaseni" class="ui inverted button">Přihlásit se</a>
-                    <a class="ui inverted button">Registrovat</a>
+                    <?php
+                    if(!isset($_SESSION["mail"])){?>
+                        <a href="prihlaseni" class="ui inverted button">Přihlásit se</a>
+                        <a href="registrace" class="ui inverted button">Registrovat</a>
+                    <?php
+                    }
+                    else{?>
+
+                        <a class="ui primary icon button"><?php echo $_SESSION['nick'];?> <i class="dropdown icon"></i></a>
+                        <?php
+                    }
+                    ?>
+
                 </div>
+
             </div>
         </div>
         <?php
 
         ?>
+        <img src="erb" class="ui image left spaced floated ">
+
         <div class="ui text container">
             <h1 class="ui inverted header">
                 Farabuk
@@ -192,21 +236,21 @@
     </div>
 
     <div class="ui vertical stripe segment">
-        <div class="ui middle aligned stackable grid container">
+        <div class="ui text container">
             <div class="row">
                 <div class="eight wide column">
-                    <h3 class="ui header">We Make Bananas That Can Dance</h3>
-                    <p>Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.</p>
+                    <h3 class="ui header">Drazí čtenáři</h3>
+                    <p>Pokud se nezblázním z tohoto, tak už snad z ničeho. S pozdravem<br> Edie</p>
                 </div>
-                <div class="six wide right floated column">
-                    <img src="assets/images/wireframe/white-image.png" class="ui large bordered rounded image">
-                </div>
+<!--                <div class="six wide right floated column">-->
+<!--                    <img src="erb" class="ui large rounded image">-->
+<!--                </div>-->
             </div>
-            <div class="row">
-                <div class="center aligned column">
-                    <a class="ui huge button">Check Them Out</a>
-                </div>
-            </div>
+<!--            <div class="row">-->
+<!--                <div class="center aligned column">-->
+<!--                    <a class="ui huge button">Check Them Out</a>-->
+<!--                </div>-->
+<!--            </div>-->
         </div>
     </div>
 
@@ -214,14 +258,11 @@
     <div class="ui vertical stripe quote segment">
         <div class="ui equal width stackable internally celled grid">
             <div class="center aligned row">
+
                 <div class="column">
-                    <h3>"What a Company"</h3>
-                    <p>That is what they all say about us</p>
-                </div>
-                <div class="column">
-                    <h3>"I shouldn't have gone with their competitor."</h3>
+                    <h3>"Poctivého nepálí."</h3>
                     <p>
-                        <img src="assets/images/avatar/nan.jpg" class="ui avatar image"> <b>Nan</b> Chief Fun Officer Acme Toys
+                        <b>Jan Hus</b> první astronaut
                     </p>
                 </div>
             </div>

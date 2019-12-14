@@ -40,7 +40,7 @@
                                     },
                                     {
                                         type   : 'email',
-                                        prompt : 'Prosím, platný e-mail'
+                                        prompt : 'Prosím, vložte platný e-mail'
                                     }
                                 ]
                             },
@@ -51,10 +51,7 @@
                                         type   : 'empty',
                                         prompt : 'Prosím, vložte heslo'
                                     },
-                                    {
-                                        type   : 'length[10]',
-                                        prompt : 'Vaše heslo musí mít aspoň 10 znaků'
-                                    }
+
                                 ]
                             }
                         }

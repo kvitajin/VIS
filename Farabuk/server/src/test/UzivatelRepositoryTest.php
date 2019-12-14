@@ -46,4 +46,10 @@ class UzivatelRepositoryTest extends TestCase {
 
     public function testCreateDeep() {
     }
+    public function testGetUserPasswd(){
+        var_dump(UzivatelRepository::getUserPasswd('nasrat@mail.com'));
+    }
+    public function testUserExists(){
+        var_dump(UzivatelRepository::userExists('nasrat@mail.com'));
+    }
 }

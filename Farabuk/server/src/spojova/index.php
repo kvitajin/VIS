@@ -17,10 +17,19 @@ $app->route('/registrace', function (){
     require __DIR__ ."/../../../client/stranky/singup.php";
 });
 $app->route('POST /makeLogin', function (){
-    require __DIR__ ."/../../../server/src/spojova/makeLogin.php";
+    require __DIR__ ."/../../src/spojova/makeLogin.php";
 });
 $app->route('POST /makeRegister', function (){
-    require __DIR__ ."/../../../server/src/spojova/makeRegister.php";
+    require __DIR__ ."/../../src/spojova/makeRegister.php";
+});
+$app->route('/odhlas', function (){
+    require __DIR__ ."/../../../client/stranky/logout.php";
+});
+$app->route('/erb', function (){
+    require __DIR__ ."/../../../server/static/img/erb.png";
+});
+$app->route('/error', function (){
+    require __DIR__ ."/../../../server/static/error.php";
 });
 $app->route('GET /@obec', function ($obec){
     Flight::set('obec', $obec) ;

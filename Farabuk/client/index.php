@@ -16,16 +16,17 @@
 ?>
 <br>
 <h1 class="ui center aligned header">Obce zapojené do projektu</h1>
-<div class="center aligned ui vertical menu ">
+<div class="ui text container">
+    <div class="center aligned ui vertical menu ">
 
-    <?php
-    foreach ($tmp as $item) {
-        echo '<a href="localhost:8000/'.$item->uri . '" class="item">
-        '. $item->nazev.'
-        </a>';
-    }
-    ?>
-
+        <?php
+        foreach ($tmp as $item) {
+            echo '<a href="localhost:8000/'.$item->uri . '" class="item">
+            '. $item->nazev.' 
+            </a>';
+        }
+        ?>
+    </div>
 </div>
 </body>
 </html>

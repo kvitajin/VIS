@@ -40,7 +40,7 @@
                             //             prompt : 'Prosím, vložte své uživatelské jméno'
                             //         },
                             //     ]
-                            }
+                            // }
                             email: {
                                 identifier  : 'email',
                                 rules: [
@@ -65,7 +65,9 @@
                                         type   : 'length[10]',
                                         prompt : 'Vaše heslo musí mít aspoň 10 znaků'
                                     }
+
                                 ]
+
                             }
 
                         }
@@ -119,11 +121,12 @@
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="map icon"></i>
-                        <select class="ui dropdown">
+                        <select class="ui dropdown" name="obec">
                             <?php
                             $tmp=ObecRepository::readAll();
+                            echo "<option value=''> Vyberte obec...</option>";
                             foreach ( $tmp as $item) {
-                                echo "<option value='" . $item->uri . "'> ". $item->nazev . "</option>";
+                                echo "<option value='" . $item->id . "'> ". $item->nazev . "</option>";
                             }
                             ?>
                         </select>
