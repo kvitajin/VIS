@@ -32,15 +32,15 @@
                 $('.ui.form')
                     .form({
                         fields: {
-                            // text: {
-                            //     identifier  : 'nick',
-                            //     rules: [
-                            //         {
-                            //             type   : 'empty',
-                            //             prompt : 'Prosím, vložte své uživatelské jméno'
-                            //         },
-                            //     ]
-                            // }
+                            text: {
+                                identifier  : 'nick',
+                                rules: [
+                                    {
+                                        type   : 'empty',
+                                        prompt : 'Prosím, vložte své uživatelské jméno'
+                                    },
+                                ]
+                            },
                             email: {
                                 identifier  : 'email',
                                 rules: [
@@ -65,11 +65,8 @@
                                         type   : 'length[10]',
                                         prompt : 'Vaše heslo musí mít aspoň 10 znaků'
                                     }
-
                                 ]
-
                             }
-
                         }
                     })
                 ;
@@ -91,13 +88,13 @@
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="user icon"></i>
-                        <input type="text" name="nick" placeholder="Uživatelské jméno">
+                        <input type="text" name="nick" placeholder="Uživatelské jméno" required>
                     </div>
                 </div>
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="user icon"></i>
-                        <input type="text" name="email" placeholder="E-mail">
+                        <input type="text" name="email" placeholder="E-mail" required>
                     </div>
                 </div>
                 <div class="field">
@@ -134,7 +131,7 @@
                 </div>
 
 
-                <div class="ui fluid large blue submit button">Registrovat</div>
+                <button class="ui fluid large blue submit button" type="submit">Registrovat</button>
             </div>
 
             <div class="ui error message"></div>

@@ -147,7 +147,8 @@ class DokumentRepository extends Repository {
             ':ck_id_druh_dokumentu'=> $data->ckIdDruhDokumentu,
             ':ck_id_kategorie_dokumentu' => $data->ckIdKategorieDokumentu
         ));
-        return Connection::pdo()->lastInsertId();    }
+        return Connection::pdo()->lastInsertId();
+    }
 
     static function createDeep($data) {
         $data->ckIdDruhDokumentu= DruhDokumentuRepository::createDeep($data->ckIdDruhDokumentu);

@@ -29,6 +29,7 @@ class UzivatelRepository extends Repository {
         $uzivatel->ckIdObec=intval($record["ck_id_obec"]);
 
         $uzivatel->skupina=SkupinaUzivatelRepository::read($uzivatel->id, self::getTableName());
+
         return $uzivatel;
     }
 

@@ -103,7 +103,19 @@ class SkupinaUzivatelRepository extends RelRepository {
             return;
         }
 
-
         //TODO  toto mozna predelat na obecny delete jednoho zaznamu
+    }
+    static function jeOpravnen($idUzivatel, $nazevOpravneni){
+        $sql = "SELECT * FROM skupina_uzivatel su JOIN skupina sk on su.ck_id_skupina = sk.id 
+                WHERE su.ck_id_uzivatel=" . $idUzivatel .
+                " AND sk.nazev=(:nazev)";
+        $statement = Connection::pdo()->prepare($sql);
+        $statement->bindValue(':nazev', $nazevOpravneni);
+        $statement->execute();
+        $tmp=$statement->fetch(PDO::FETCH_ASSOC);
+        if ($tmp){
+            return true;
+        }
+        return false;
     }
 }

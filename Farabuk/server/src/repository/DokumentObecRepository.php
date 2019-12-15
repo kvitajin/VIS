@@ -1,7 +1,7 @@
 <?php
-require_once "src/data/Dokument.php";
-require_once "src/data/Obec.php";
-require_once "src/data/DokumentObec.php";
+require_once __DIR__ . "/../../../server/src/data/Dokument.php";
+require_once __DIR__ . "/../../../server/src/data/Obec.php";
+require_once __DIR__ . "/../../../server/src/data/DokumentObec.php";
 
 use Connection\Connection;
 
@@ -10,7 +10,7 @@ use Connection\Connection;
 class DokumentObecRepository extends RelRepository {
 
     static function getTableName() {
-        return "dokument_foto";
+        return "dokument_obec";
     }
 
     static function read($id, $fromSide) {
@@ -79,8 +79,13 @@ class DokumentObecRepository extends RelRepository {
 
     }
 
-    static function create($idLeft, $idRight) {
-        // TODO: Implement create() method.
+    static function create($idDokument, $idObec) {
+        $table = self::getTableName();
+        $sql = "INSERT INTO ${table}(ck_id_dokument, ck_id_obec) 
+	    VALUES (".$idDokument ." , ". $idObec .")";
+        $statement = Connection::pdo()->prepare($sql);
+        $statement->execute();
+        return Connection::pdo()->lastInsertId();
     }
 
     static function delete($id, $fromSide) {

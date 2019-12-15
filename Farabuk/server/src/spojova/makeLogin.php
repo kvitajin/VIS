@@ -29,9 +29,15 @@ try {
     echo "Exeption: "  . $e->getMessage();          //TODO pak predat do chybove stranky
 }finally{
     var_dump( $user);
+    $_SESSION["id"]=$user->id;
     $_SESSION["mail"]=$user->email;
     $_SESSION["nick"]=$user->nick;
     $_SESSION["ban"]=$user->ban;
+    $_SESSION["prava"]=array();
+    foreach ($user->skupina as $item) {
+        array_push($_SESSION["prava"], $item);
+    }
+
     $tmp=$_SESSION['obec'];
     echo $tmp;
         header('Location: /'.$tmp);

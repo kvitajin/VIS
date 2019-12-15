@@ -11,7 +11,7 @@ class ObecRepositoryTest extends TestCase {
     }
 
     public function testReadAll() {
-//        var_dump(ObecRepository::readAll());
+        var_dump(ObecRepository::readAll());
         $this->assertTrue(ObecRepository::readAll() != null);
     }
 

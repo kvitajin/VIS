@@ -1,5 +1,5 @@
 <?php
-
+error_log($_SERVER["REQUEST_URI"]);
 if (preg_match('/\.(?:png|jpg|jpeg|gif|css|svg)$/', $_SERVER["REQUEST_URI"])) {
     return false;    // serve the requested resource as-is.
 } else {

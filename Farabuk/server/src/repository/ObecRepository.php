@@ -15,6 +15,7 @@ class ObecRepository extends Repository {
         $data=array();
         $tmpCollection= parent::readAll($lim);
         foreach ( $tmpCollection as $item){
+            if (!$item["nazev"]){ continue;}
             $tmp= new Obec();
             $tmp->id= intval($item["id"]);
             $tmp->nazev= $item["nazev"];

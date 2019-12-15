@@ -37,7 +37,7 @@ class UzivatelRepositoryTest extends TestCase {
     }
 
     public function testRead() {
-        var_dump(UzivatelRepository::read(1));
+        var_dump(UzivatelRepository::read('jindrich.kvita@gnj.cz'));
     }
 
     public function testReadRearDeep() {
@@ -52,4 +52,8 @@ class UzivatelRepositoryTest extends TestCase {
     public function testUserExists(){
         var_dump(UzivatelRepository::userExists('nasrat@mail.com'));
     }
+    public function testJeOpravnen(){
+        var_dump(SkupinaUzivatelRepository::jeOpravnen(2, 'komntator'));
+    }
+
 }

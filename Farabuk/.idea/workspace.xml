@@ -2,20 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4074300-0843-4455-99d1-a5a019a75b7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/stranky/logout.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/static/error.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/stranky/alba.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/stranky/dokumenty.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/stranky/domu.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/stranky/tvorbaDokumentu.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/spojova/makeDokument.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/stranky/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/client/stranky/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/stranky/obec.php" beforeDir="false" afterPath="$PROJECT_DIR$/client/stranky/obec.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/stranky/singup.php" beforeDir="false" afterPath="$PROJECT_DIR$/client/stranky/singup.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/db/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/server/db/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dev.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/dev.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/data/DokumentObec.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/data/DokumentObec.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/repository/DokumentObecRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/DokumentObecRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/repository/DokumentRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/DokumentRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/repository/ObecRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/ObecRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/repository/SkupinaUzivatelRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/SkupinaUzivatelRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/repository/UzivatelRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/repository/UzivatelRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/spojova/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/spojova/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/spojova/makeLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/spojova/makeLogin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/spojova/makeRegister.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/spojova/makeRegister.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/test/DokumentRepositoryTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/DokumentRepositoryTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/test/ObecRepositoryTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/ObecRepositoryTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/test/UzivatelRepositoryTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/UzivatelRepositoryTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +62,20 @@
         <item name="db" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="dokument_obec: table" type="3d80ac25:SqliteImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="obec: table" type="3d80ac25:SqliteImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -127,17 +148,17 @@
       <recent name="$PROJECT_DIR$/server/src/repository" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.UzivatelRepositoryTest.testGetUserPasswd">
-    <configuration name="AlbumRepositoryTest.testReadAll" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="AlbumRepositoryTest" file="$PROJECT_DIR$/server/src/test/AlbumRepositoryTest.php" method="testReadAll" scope="Method" />
-      <method v="2" />
-    </configuration>
-    <configuration name="UzivatelRepositoryTest.test" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="UzivatelRepositoryTest" file="$PROJECT_DIR$/server/src/test/UzivatelRepositoryTest.php" method="test" scope="Method" />
+  <component name="RunManager" selected="PHPUnit.UzivatelRepositoryTest.testJeOpravnen">
+    <configuration name="ObecRepositoryTest.testReadAll" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="ObecRepositoryTest" file="$PROJECT_DIR$/server/src/test/ObecRepositoryTest.php" method="testReadAll" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="UzivatelRepositoryTest.testGetUserPasswd" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="UzivatelRepositoryTest" file="$PROJECT_DIR$/server/src/test/UzivatelRepositoryTest.php" method="testGetUserPasswd" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="UzivatelRepositoryTest.testJeOpravnen" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="UzivatelRepositoryTest" file="$PROJECT_DIR$/server/src/test/UzivatelRepositoryTest.php" method="testJeOpravnen" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="UzivatelRepositoryTest.testRead" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
@@ -150,11 +171,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.UzivatelRepositoryTest.testJeOpravnen" />
+        <item itemvalue="PHPUnit.UzivatelRepositoryTest.testRead" />
+        <item itemvalue="PHPUnit.ObecRepositoryTest.testReadAll" />
         <item itemvalue="PHPUnit.UzivatelRepositoryTest.testGetUserPasswd" />
         <item itemvalue="PHPUnit.UzivatelRepositoryTest.testUserExists" />
-        <item itemvalue="PHPUnit.UzivatelRepositoryTest.testRead" />
-        <item itemvalue="PHPUnit.UzivatelRepositoryTest.test" />
-        <item itemvalue="PHPUnit.AlbumRepositoryTest.testReadAll" />
       </list>
     </recent_temporary>
   </component>
@@ -163,7 +184,22 @@
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:db" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:db" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@65e3de34" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:db" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@7b95f4ce" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -206,7 +242,8 @@
       <workItem from="1576164016280" duration="6442000" />
       <workItem from="1576235386204" duration="14034000" />
       <workItem from="1576263172710" duration="21972000" />
-      <workItem from="1576285408673" duration="8788000" />
+      <workItem from="1576285408673" duration="39772000" />
+      <workItem from="1576365459107" duration="3308000" />
     </task>
     <servers />
   </component>
@@ -267,22 +304,22 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="531" y="269" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1576180266313" />
-    <state width="1845" height="247" key="GridCell.Tab.0.bottom" timestamp="1576287703979">
+    <state width="1845" height="247" key="GridCell.Tab.0.bottom" timestamp="1576367718017">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1845" height="247" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1576287703979" />
-    <state width="1845" height="247" key="GridCell.Tab.0.center" timestamp="1576287703978">
+    <state width="1845" height="247" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1576367718017" />
+    <state width="1845" height="247" key="GridCell.Tab.0.center" timestamp="1576367718016">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1845" height="247" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1576287703978" />
-    <state width="1845" height="247" key="GridCell.Tab.0.left" timestamp="1576287703977">
+    <state width="1845" height="247" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1576367718016" />
+    <state width="1845" height="247" key="GridCell.Tab.0.left" timestamp="1576367718014">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1845" height="247" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1576287703977" />
-    <state width="1845" height="247" key="GridCell.Tab.0.right" timestamp="1576287703978">
+    <state width="1845" height="247" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1576367718014" />
+    <state width="1845" height="247" key="GridCell.Tab.0.right" timestamp="1576367718016">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1845" height="247" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1576287703978" />
+    <state width="1845" height="247" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1576367718016" />
     <state width="1874" height="340" key="GridCell.Tab.1.bottom" timestamp="1576273597308">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -303,10 +340,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="627" y="364" width="703" height="385" key="NewPhpClassDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576263967319" />
-    <state x="756" y="478" width="397" height="158" key="NewPhpFileDialog" timestamp="1576278236049">
+    <state x="756" y="478" width="397" height="158" key="NewPhpFileDialog" timestamp="1576361496118">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="756" y="478" width="397" height="158" key="NewPhpFileDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576278236049" />
+    <state x="756" y="478" width="397" height="158" key="NewPhpFileDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576361496118" />
     <state x="449" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1576154679309">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -315,14 +352,18 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="200" height="502" key="SqlResolveConfigurable/0.27.1920.1053@0.27.1920.1053" timestamp="1576013363061" />
+    <state width="518" height="446" key="SwitcherDM" timestamp="1576368141219">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="518" height="446" key="SwitcherDM/0.27.1920.1053@0.27.1920.1053" timestamp="1576368141219" />
     <state x="100" y="127" width="1720" height="853" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1575675851173">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="100" y="127" width="1720" height="853" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1575675851173" />
-    <state x="620" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1576285421259">
+    <state x="620" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1576365477228">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="620" y="381" key="com.intellij.ide.util.TipDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576285421259" />
+    <state x="620" y="381" key="com.intellij.ide.util.TipDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576365477228" />
     <state x="732" y="473" width="445" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576177882227">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>

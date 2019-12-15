@@ -97,4 +97,9 @@ class DokumentRepositoryTest extends TestCase {
         var_dump(DokumentRepository::readAllKategorieDruh(1, 1));
         $this->assertTrue(DokumentRepository::readAllKategorie(1)!==null);
     }
+    public function testDokumentObecCreate(){
+        var_dump(DokumentObecRepository::create(1,10));
+    }
+
+
 }
