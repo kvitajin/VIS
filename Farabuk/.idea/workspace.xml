@@ -5,15 +5,13 @@
       <change afterPath="$PROJECT_DIR$/client/stranky/tvorbaAlba.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/client/stranky/tvorbaFotek.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/server/src/spojova/makeAlbum.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/spojova/makeFoto.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/stranky/alba.php" beforeDir="false" afterPath="$PROJECT_DIR$/client/stranky/alba.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/stranky/dokumenty.php" beforeDir="false" afterPath="$PROJECT_DIR$/client/stranky/dokumenty.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/stranky/tvorbaDokumentu.php" beforeDir="false" afterPath="$PROJECT_DIR$/client/stranky/tvorbaDokumentu.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/db/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/server/db/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/db/db.sqlite3-shm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/db/db.sqlite3-wal" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/spojova/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/spojova/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/spojova/makeFoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/spojova/makeFoto.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +70,7 @@
         <item name="db" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="obec: table" type="3d80ac25:SqliteImplModel$Table" />
+        <item name="foto: table" type="3d80ac25:SqliteImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -181,7 +179,17 @@
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:db" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:db" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@775ac2e3" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -228,7 +236,7 @@
       <workItem from="1576365459107" duration="3308000" />
       <workItem from="1576404022034" duration="15210000" />
       <workItem from="1576453362430" duration="586000" />
-      <workItem from="1576500899191" duration="239000" />
+      <workItem from="1576500899191" duration="7632000" />
     </task>
     <servers />
   </component>
@@ -321,10 +329,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="200" height="502" key="SqlResolveConfigurable/0.27.1920.1053@0.27.1920.1053" timestamp="1576013363061" />
-    <state width="518" height="446" key="SwitcherDM" timestamp="1576500971460">
+    <state width="518" height="446" key="SwitcherDM" timestamp="1576505489351">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="518" height="446" key="SwitcherDM/0.27.1920.1053@0.27.1920.1053" timestamp="1576500971460" />
+    <state width="518" height="446" key="SwitcherDM/0.27.1920.1053@0.27.1920.1053" timestamp="1576505489351" />
     <state x="100" y="127" width="1720" height="853" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1576453652771">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
