@@ -36,35 +36,41 @@
                 $('.ui.dropdown')
                     .dropdown()
                 ;
-                $('.ui.form')
-                    .form({
-                        fields: {
-                            email: {
-                                identifier  : 'email',
-                                rules: [
-                                    {
-                                        type   : 'empty',
-                                        prompt : 'Prosím, vložte e-mail'
-                                    },
-                                    {
-                                        type   : 'email',
-                                        prompt : 'Prosím, vložte platný e-mail'
-                                    }
-                                ]
-                            },
-                            password: {
-                                identifier  : 'heslo',
-                                rules: [
-                                    {
-                                        type   : 'empty',
-                                        prompt : 'Prosím, vložte heslo'
-                                    },
-
-                                ]
-                            }
-                        }
-                    })
-                ;
+                //$('.ui.form')
+                //                    .form({
+                //                        // fields: {
+                //                        //     podnadpis: {
+                //                        //         identifier  : 'nadpis',
+                //                        //         rules: [
+                //                        //             {
+                //                        //                 type   : 'empty',
+                //                        //                 prompt : 'Prosím, vložte nadpis'
+                //                        //             },
+                //                        //         ]
+                //                        //     },
+                //                        podnadpis: {
+                //                            identifier  : 'podpadpis',
+                //                            rules: [
+                //                                {
+                //                                    type   : 'empty',
+                //                                    prompt : 'Prosím, vložte podnadpis'
+                //                                },
+                //
+                //                            ]
+                //                        }
+                //                        // obsah: {
+                //                        //     identifier  : 'obsah',
+                //                        //     rules: [
+                //                        //         {
+                //                        //             type   : 'empty',
+                //                        //             prompt : 'Prosím, vložte obsah dokumentu'
+                //                        //         },
+                //                        //
+                //                        //     ]
+                //                        // }
+                //                    }
+                //                })
+            // ;
             })
         ;
     </script>
@@ -112,13 +118,13 @@
                 <?php
                 $tmp=ObecRepository::readAll();
                 echo '<div class="field">'.
-                        '<label>Obce pro které je dokument určen</label>'.
-                        '<select multiple="" name="obec[]" class="ui search selection dropdown">';
+                    '<label>Obce pro které je dokument určen</label>'.
+                    '<select multiple="" name="obec[]" class="ui search selection dropdown">';
                 foreach ($tmp as $item) {
                     echo '<option value="'. $item->id.'">'. $item->nazev.'</option>';
                 }
                 echo ' </select>'.
-                ' </div>';
+                    ' </div>';
 
                 $tmpDruh=DruhDokumentuRepository::readAll();
                 echo '<div class="field">'.

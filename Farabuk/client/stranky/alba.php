@@ -154,9 +154,9 @@
 <div class="ui large top fixed hidden menu">
     <div class="ui container">
         <?php
-        echo '<a href="/' . $_SESSION['obec'] . '" class="active item">Domů</a>';
+        echo '<a href="/' . $_SESSION['obec'] . '" class="item">Domů</a>';
         echo '<a href="/' . $_SESSION['obec'] . '/dokumenty" class="item">Dokumenty</a>';
-        echo '<a href="/' . $_SESSION['obec'] . '/alba" class="item">Alba</a>'
+        echo '<a href="/' . $_SESSION['obec'] . '/alba" class="active item">Alba</a>'
         ?>
 
         <div class="right menu">
@@ -192,9 +192,9 @@
 <!-- Sidebar Menu -->
 <div class="ui blue vertical inverted sidebar menu">
     <?php
-    echo '<a href="/' .$_SESSION['obec']  . '" class="active item">Domů</a>';
+    echo '<a href="/' .$_SESSION['obec']  . '" class="item">Domů</a>';
     echo '<a href="/' . $_SESSION['obec'] . '/dokumenty" class="item">Dokumenty</a>';
-    echo '<a href="/' . $_SESSION['obec'] . '/alba" class="item">Alba</a>';
+    echo '<a href="/' . $_SESSION['obec'] . '/alba" class="active item">Alba</a>';
     if(!isset($_SESSION["mail"])){?>
         <a href="prihlaseni" class="item">Přihlásit se</a>
         <a href="registrace" class="item">Registrovat</a>
@@ -226,9 +226,9 @@
                     <i class="sidebar icon"></i>
                 </a>
                 <?php
-                echo '<a href="/' . $_SESSION['obec'] . '" class="active item">Domů</a>';
+                echo '<a href="/' . $_SESSION['obec'] . '" class="item">Domů</a>';
                 echo '<a href="/' . $_SESSION['obec'] . '/dokumenty" class="item">Dokumenty</a>';
-                echo '<a href="/' . $_SESSION['obec'] . '/alba" class="item">Alba</a>'
+                echo '<a href="/' . $_SESSION['obec'] . '/alba" class="active item">Alba</a>'
                 ?>
 
                 <div class="right item">

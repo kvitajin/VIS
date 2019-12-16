@@ -39,19 +39,33 @@ $app->route('/tvorbaDokumentu', function (){
 $app->route('/makeDokument', function (){
     require __DIR__ ."/../../../server/src/spojova/makeDokument.php";
 });
-$app->route('GET /@obec', function ($obec){
+$app->route('/tvorbaAlba', function (){
+    require __DIR__ ."/../../../client/stranky/tvorbaAlba.php";
+});
+$app->route('/makeAlbum', function (){
+    require __DIR__ ."/../../../server/src/spojova/makeAlbum.php";
+});
+$app->route('/tvorbaFotek', function (){
+    require __DIR__ ."/../../../client/stranky/tvorbaFotek.php";
+});
+$app->route('/makeFoto', function (){
+    require __DIR__ ."/../../../server/src/spojova/makeFoto.php";
+});
+$app->route('GET /@obec', function (&$obec){
     Flight::set('obec', $obec) ;
     $_SESSION['obec']=$obec;
     require __DIR__ ."/../../../client/stranky/obec.php";
 });
-$app->route('GET /@obec/dokumenty', function ($obec){
+$app->route('GET /@obec/@subclass', function ($obec, $subclass){
     $_SESSION['obec']=$obec;
-    require __DIR__ ."/../../../client/stranky/dokumenty.php";
+    if ($subclass==='dokument'){
+        require __DIR__ ."/../../../client/stranky/dokumenty.php";
+    }
+    else if ($subclass==='alba'){
+        require __DIR__ ."/../../../client/stranky/dokumenty.php";
+    }
 });
-$app->route('GET /@obec/alba', function ($obec){
-    $_SESSION['obec']=$obec;
-    require __DIR__ ."/../../../client/stranky/alba.php";
-});
+
 
 
 
