@@ -9,6 +9,6 @@
   "author": "Jindřich Kvita",
   "license": "ISC",
   "dependencies": {
-    "fomantic-ui": "^2.8.2"
+    "fomantic-ui": "^2.8.7"
   }
 }
